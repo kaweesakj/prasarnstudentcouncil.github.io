@@ -1,8 +1,18 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Prasarnwittaya Student Council 2024</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/slider.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
 <header class="header">
-  <script defer src="js/menu.js"></script>
   <div class="header-container">
     <div class="logo">
-      <img src="img/logo-school.png" alt="School Logo">
+      <img src="img/logo-school.png">
       <div class="logo-text">
         <span class="th">สภานักเรียน โรงเรียนประสารวิทยา</span>
         <span class="en">Prasarnwittaya Student Council 2024</span>
@@ -11,15 +21,13 @@
 
     <nav class="nav">
       <a href="index.html">หน้าแรก</a>
-
       <div class="dropdown">
         <button class="dropbtn">ข่าวสาร</button>
         <div class="dropdown-content">
           <a href="#">ข่าวกิจกรรม</a>
-          <a href="#">ประกาศสภานักเรียน</a>
+          <a href="#">ประกาศ</a>
         </div>
       </div>
-
       <div class="dropdown">
         <button class="dropbtn">เกี่ยวกับโรงเรียน</button>
         <div class="dropdown-content">
@@ -27,8 +35,52 @@
           <a href="#">ระบบบริหารโรงเรียน</a>
         </div>
       </div>
-
-      <a href="contact.html">ติดต่อ</a>
+      <a href="#">ติดต่อ</a>
     </nav>
   </div>
 </header>
+
+<!-- SLIDER -->
+<section class="slider">
+  <img src="img/banner1.jpg" class="slide active">
+  <img src="img/banner2.jpg" class="slide">
+  <img src="img/banner3.jpg" class="slide">
+</section>
+
+<!-- NEWS -->
+<section class="news">
+  <h2>ข่าวสารประชาสัมพันธ์</h2>
+  <div class="news-grid">
+    <div class="news-card">
+      <h3>กิจกรรมวันสำคัญ</h3>
+      <p>สภานักเรียนร่วมจัดกิจกรรมส่งเสริมคุณธรรม</p>
+    </div>
+    <div class="news-card">
+      <h3>ประชุมสภานักเรียน</h3>
+      <p>สรุปผลการประชุมประจำเดือน</p>
+    </div>
+    <div class="news-card">
+      <h3>กิจกรรมจิตอาสา</h3>
+      <p>นักเรียนร่วมทำความดีเพื่อสังคม</p>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM -->
+<section class="system">
+  <h2>ระบบและบริการ</h2>
+  <div class="system-grid">
+    <div class="system-card">📚 ระบบบริหารโรงเรียน</div>
+    <div class="system-card">📅 ปฏิทินกิจกรรม</div>
+    <div class="system-card">📄 ดาวน์โหลดเอกสาร</div>
+    <div class="system-card">📞 ติดต่อสภานักเรียน</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2024 Prasarnwittaya Student Council</p>
+</footer>
+
+</body>
+</html>
