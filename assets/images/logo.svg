@@ -1,3 +1,8 @@
-<a class="logo" href="/">
-  <img src="assets/images/logo.svg" alt="คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา — Prasarnwittaya Student Council 2024" width="64" height="64">
-</a>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="10" fill="#0B5ED7"/>
+  <path d="M16 40C20 32 28 26 32 24C36 26 44 32 48 40V48H16V40Z" fill="#FFC107"/>
+  <circle cx="32" cy="18" r="6" fill="#FFFFFF"/>
+  <!-- เพิ่มตัวย่อ P และ W เล็ก ๆ เพื่อบ่งชี้ Prasarnwittaya -->
+  <text x="32" y="52" text-anchor="middle" font-family="Sarabun, Arial" font-size="9" fill="#FFFFFF" font-weight="700">PW</text>
+</svg>
