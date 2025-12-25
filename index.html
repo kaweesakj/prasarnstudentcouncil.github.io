@@ -1,86 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>Prasarnwittaya Student Council 2024</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/slider.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา — Prasarnwittaya Student Council 2024</title>
+  <meta name="description" content="คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา — ข่าว กิจกรรม และข้อมูลสำคัญ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">
+        <img src="assets/images/logo.svg" alt="Prasarnwittaya Student Council logo" />
+        <div class="logo-text">
+          <span class="school">Prasarnwittaya Student Council 2024</span>
+          <small>โรงเรียนประสารวิทยา (Prasarnwittaya School)</small>
+        </div>
+      </a>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header-container">
-    <div class="logo">
-      <img src="img/logo-school.png">
-      <div class="logo-text">
-        <span class="th">สภานักเรียน โรงเรียนประสารวิทยา</span>
-        <span class="en">Prasarnwittaya Student Council 2024</span>
-      </div>
+      <nav class="nav">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#home">หน้าแรก</a></li>
+          <li><a href="#about">เกี่ยวกับเรา</a></li>
+          <li><a href="#news">ข่าวสาร</a></li>
+          <li><a href="#events">กิจกรรม</a></li>
+          <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <nav class="nav">
-      <a href="index.html">หน้าแรก</a>
-      <div class="dropdown">
-        <button class="dropbtn">ข่าวสาร</button>
-        <div class="dropdown-content">
-          <a href="#">ข่าวกิจกรรม</a>
-          <a href="#">ประกาศ</a>
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา</h1>
+          <p class="muted">ประจำปีการศึกษา 2567 — Prasarnwittaya Student Council 2024</p>
+          <p>ร่วมพัฒนาชุมชนโรงเรียน ถ่ายทอดความคิด และสร้างสรรค์กิจกรรมเพื่อเพื่อนนักเรียน</p>
+          <p class="hero-actions">
+            <a class="btn btn-primary" href="#news">อ่านข่าวล่าสุด</a>
+            <a class="btn btn-outline" href="#events">ดูกิจกรรม</a>
+          </p>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="card highlight">
+            <h3>รับสมัครคณะกรรมการสภานักเรียน</h3>
+            <p>สมัครตั้งแต่วันนี้ — 10 ม.ค. 2568</p>
+            <a class="btn btn-small" href="#contact">สมัครเลย</a>
+          </div>
         </div>
       </div>
-      <div class="dropdown">
-        <button class="dropbtn">เกี่ยวกับโรงเรียน</button>
-        <div class="dropdown-content">
-          <a href="#">ข้อมูลโรงเรียน</a>
-          <a href="#">ระบบบริหารโรงเรียน</a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">เกี่ยวกับเรา</h2>
+        <div class="grid grid-2">
+          <div>
+            <p>สภานักเรียนโรงเรียนประสารวิทยา คือกลุ่มนักเรียนที่ร่วมกันเป็นสะพานระหว่างนักเรียนและผู้บริหาร เพื่อพัฒนาสภาพแวดล้อมการเรียนรู้และจัดกิจกรรมส่งเสริมคุณภาพชีวิตนักเรียน</p>
+            <ul class="info-list">
+              <li><strong>ภารกิจ:</strong> ฟังเสียงนักเรียน, จัดกิจกรรม, ส่งเสริมความเป็นผู้นำ</li>
+              <li><strong>วิสัยทัศน์:</strong> นักเรียนมีส่วนร่วม พัฒนาโรงเรียนอย่างยั่งยืน</li>
+            </ul>
+          </div>
+          <div>
+            <div class="card">
+              <h3>ข่าวประชาสัมพันธ์</h3>
+              <p>ติดตามข่าวประชาสัมพันธ์เกี่ยวกับกิจกรรมต่าง ๆ ของคณะกรรมการสภานักเรียนที่นี่</p>
+              <a class="btn btn-primary" href="#news">ดูทั้งหมด</a>
+            </div>
+          </div>
         </div>
       </div>
-      <a href="#">ติดต่อ</a>
-    </nav>
-  </div>
-</header>
+    </section>
 
-<!-- SLIDER -->
-<section class="slider">
-  <img src="img/banner1.jpg" class="slide active">
-  <img src="img/banner2.jpg" class="slide">
-  <img src="img/banner3.jpg" class="slide">
-</section>
+    <!-- News -->
+    <section id="news" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">ข่าวสารล่าสุด</h2>
+        <div class="grid grid-3 cards" id="news-list">
+          <article class="card news-card">
+            <img src="https://via.placeholder.com/640x360/0b5ed7/ffffff?text=ข่าว+1" alt="ข่าว 1">
+            <div class="card-body">
+              <h3>การแข่งขันทักษะวิชาการ</h3>
+              <time datetime="2025-12-20">20 ธ.ค. 2568</time>
+              <p>นักเรียนโรงเรียนประสารวิทยาได้รับรางวัลในการแข่งขันทักษะวิชาการระดับจังหวัด</p>
+              <a class="read-more" href="#">อ่านต่อ</a>
+            </div>
+          </article>
 
-<!-- NEWS -->
-<section class="news">
-  <h2>ข่าวสารประชาสัมพันธ์</h2>
-  <div class="news-grid">
-    <div class="news-card">
-      <h3>กิจกรรมวันสำคัญ</h3>
-      <p>สภานักเรียนร่วมจัดกิจกรรมส่งเสริมคุณธรรม</p>
+          <article class="card news-card">
+            <img src="https://via.placeholder.com/640x360/ffc107/000000?text=ข่าว+2" alt="ข่าว 2">
+            <div class="card-body">
+              <h3>โครงการปลูกต้นไม้</h3>
+              <time datetime="2025-11-15">15 พ.ย. 2568</time>
+              <p>คณะกรรมการสภานักเรียนร่วมกับชมรมสิ่งแวดล้อมจัดกิจกรรมปลูกต้นไม้ในชุมชน</p>
+              <a class="read-more" href="#">อ่านต่อ</a>
+            </div>
+          </article>
+
+          <article class="card news-card">
+            <img src="https://via.placeholder.com/640x360/ffffff/0b5ed7?text=ข่าว+3" alt="ข่าว 3">
+            <div class="card-body">
+              <h3>รับสมัครจิตอาสา</h3>
+              <time datetime="2025-10-01">1 ต.ค. 2568</time>
+              <p>เปิดรับสมัครนักเรียนที่สนใจร่วมเป็นจิตอาสาจัดกิจกรรมเพื่อชุมชน</p>
+              <a class="read-more" href="#">อ่านต่อ</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="section">
+      <div class="container">
+        <h2 class="section-title">กิจกรรมที่กำลังจะมาถึง</h2>
+        <div class="grid grid-3">
+          <div class="card event-card">
+            <h3>งานกีฬาสี</h3>
+            <p class="muted">5 ม.ค. 2569</p>
+            <p>เชิญชวนเข้าร่วมเป็นตัวแทนนักเรียนในการแข่งขันงานกีฬาสีประจำปี</p>
+          </div>
+          <div class="card event-card">
+            <h3>ค่ายผู้นำเยาวชน</h3>
+            <p class="muted">12-14 ม.ค. 2569</p>
+            <p>ฝึกอบรมทักษะการเป็นผู้นำ การทำทีม และการสื่อสารสาธารณะ</p>
+          </div>
+          <div class="card event-card">
+            <h3>กิจกรรมอาสา</h3>
+            <p class="muted">20 ม.ค. 2569</p>
+            <p>ร่วมกันทำความสะอาดและปรับปรุงชุมชนรอบโรงเรียน</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section bg-accent">
+      <div class="container">
+        <h2 class="section-title">ติดต่อเรา</h2>
+        <div class="grid grid-2">
+          <div>
+            <p>ที่อยู่: โรงเรียนประสารวิทยา, ถนนตัวอย่าง ตำบลตัวอย่าง จังหวัดตัวอย่าง</p>
+            <p>อีเมล: <a href="mailto:studentcouncil@prasarnwittaya.ac.th">studentcouncil@prasarnwittaya.ac.th</a></p>
+            <p>โทร: 0-1234-5678</p>
+          </div>
+          <div>
+            <form id="contact-form" class="contact-form" onsubmit="return false;">
+              <label>ชื่อ</label>
+              <input type="text" placeholder="ชื่อของคุณ" required>
+              <label>อีเมล</label>
+              <input type="email" placeholder="example@domain.com" required>
+              <label>ข้อความ</label>
+              <textarea rows="4" placeholder="พิมพ์ข้อความที่นี่..." required></textarea>
+              <button class="btn btn-primary" type="submit">ส่งข้อความ</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>&copy; <span id="year"></span> คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา — Prasarnwittaya School</p>
+      </div>
+      <div class="footer-right">
+        <p>ติดตามเรา: <a href="#">Facebook</a> · <a href="#">Instagram</a></p>
+      </div>
     </div>
-    <div class="news-card">
-      <h3>ประชุมสภานักเรียน</h3>
-      <p>สรุปผลการประชุมประจำเดือน</p>
-    </div>
-    <div class="news-card">
-      <h3>กิจกรรมจิตอาสา</h3>
-      <p>นักเรียนร่วมทำความดีเพื่อสังคม</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- SYSTEM -->
-<section class="system">
-  <h2>ระบบและบริการ</h2>
-  <div class="system-grid">
-    <div class="system-card">📚 ระบบบริหารโรงเรียน</div>
-    <div class="system-card">📅 ปฏิทินกิจกรรม</div>
-    <div class="system-card">📄 ดาวน์โหลดเอกสาร</div>
-    <div class="system-card">📞 ติดต่อสภานักเรียน</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2024 Prasarnwittaya Student Council</p>
-</footer>
-
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
