@@ -1,4 +1,10 @@
-body {
+index.html
+news.html
+school.html
+contact.html
+
+css/
+ └─ body {
   margin: 0;
   font-family: 'Prompt', sans-serif;
   background: #f5f7fb;
@@ -55,3 +61,9 @@ nav a {
   padding: 18px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+js/
+ └─ main.js
+
+img/
+ └─ (รูปโลโก้)
