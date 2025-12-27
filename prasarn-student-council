@@ -1,0 +1,16 @@
+prasarn-student-council/
+│
+├─ index.html
+├─ news.html
+├─ school.html
+│
+├─ css/
+│   └─ style.css
+│
+├─ js/
+│   └─ script.js
+│
+└─ images/
+    ├─ slide1.jpg
+    ├─ slide2.jpg
+    ├─ slide3.jpg
