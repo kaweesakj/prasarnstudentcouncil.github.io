@@ -2,7 +2,9 @@ prasarn-student-council/
 │
 ├─ index.html
 ├─ news.html
+├─ anniversary45.html
 ├─ school.html
+├─ school-bright.html
 │
 ├─ css/
 │   └─ style.css
@@ -11,6 +13,3 @@ prasarn-student-council/
 │   └─ script.js
 │
 └─ images/
-    ├─ slide1.jpg
-    ├─ slide2.jpg
-    ├─ slide3.jpg
