@@ -128,3 +128,80 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
+/* =========================
+   Responsive (Mobile)
+========================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .home-text {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .home-text h1 {
+        font-size: 22px;
+    }
+
+    .buttons a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #menu.active {
+        display: flex;
+    }
+}
