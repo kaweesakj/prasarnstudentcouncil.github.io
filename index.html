@@ -1,96 +1,175 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <title>Prasarnwittaya School Student Council 2024</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSC 2024</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #333;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    background: #0b3c91;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 20px;
+}
+
+.menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ===== HOME ===== */
+header {
+    height: 90vh;
+    background: linear-gradient(
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.4)
+    ), url("https://picsum.photos/1200/800") center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h2 {
+    color: #fff;
+    font-size: 36px;
+}
+
+header p {
+    color: #ffd500;
+    margin-top: 10px;
+}
+
+/* ===== SECTION ===== */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #0b3c91;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #f3f3f3;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 15px;
+    max-width: 400px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #0b3c91;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #0b3c91;
+        margin-top: 10px;
+    }
+
+    ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header h2 {
+        font-size: 26px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="logo">PSC 2024</div>
-
-    <!-- ปุ่ม ☰ สำหรับมือถือ -->
+<!-- NAV -->
+<nav>
+    <h1>PSC 2024</h1>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <!-- เมนู -->
     <ul id="menu">
-        <li><a href="index.html">หน้าแรก</a></li>
-        <li><a href="news.html">ข่าวสาร</a></li>
-        <li><a href="school.html">เกี่ยวกับโรงเรียน</a></li>
-        <li><a href="contact.html">ติดต่อเรา</a></li>
+        <li><a href="#home">หน้าแรก</a></li>
+        <li><a href="#news">ข่าวสาร</a></li>
+        <li><a href="#school">เกี่ยวกับโรงเรียน</a></li>
+        <li><a href="#contact">ติดต่อเรา</a></li>
     </ul>
 </nav>
 
-<!-- Home -->
-<section id="home" class="home">
-    <div class="slider">
-        <img src="images/slide1.jpg" class="slide active">
-        <img src="images/slide2.jpg" class="slide">
-        <img src="images/slide3.jpg" class="slide">
+<!-- HOME -->
+<header id="home">
+    <div>
+        <h2>คณะกรรมการสภานักเรียน</h2>
+        <p>โรงเรียนประสารวิทยา ปีการศึกษา 2567</p>
     </div>
+</header>
 
-    <div class="home-text">
-        <h1>คณะกรรมการสภานักเรียน</h1>
-        <p>โรงเรียนประสารวิทยา ประจำปีการศึกษา 2567</p>
-        <div class="buttons">
-            <a href="#news">ข่าวสาร</a>
-            <a href="#school">เกี่ยวกับโรงเรียน</a>
-            <a href="#contact">ติดต่อเรา</a>
-        </div>
-    </div>
-</section>
-
-<!-- News -->
-<section id="news" class="section">
+<!-- NEWS -->
+<section id="news">
     <h2>📰 ข่าวสาร</h2>
-    <div class="card-container">
-        <div class="card">📢 ประกาศเปิดรับสมัครกิจกรรมชุมนุม</div>
-        <div class="card">📢 แจ้งกำหนดการสอบปลายภาค</div>
-        <div class="card">📢 กิจกรรมวันสำคัญทางศาสนา</div>
-    </div>
+    <div class="card">📢 งานครบรอบ 45 ปี โรงเรียนประสารวิทยา</div>
+    <div class="card">📢 ประกาศกิจกรรมสภานักเรียน</div>
 </section>
 
-<!-- Anniversary -->
-<section id="anniversary" class="section yellow">
-    <h2>🎉 งานครบรอบ 45 ปี โรงเรียนประสารวิทยา</h2>
-    <p>
-        งานครบรอบ 45 ปี โรงเรียนประสารวิทยา จัดขึ้นเพื่อรำลึกถึงประวัติ
-        ความเป็นมา และความสำเร็จของโรงเรียน พร้อมกิจกรรมพิเศษมากมาย
-    </p>
-</section>
-
-<!-- School -->
-<section id="school" class="section">
+<!-- SCHOOL -->
+<section id="school">
     <h2>🏫 เกี่ยวกับโรงเรียน</h2>
     <p>
-        โรงเรียนประสารวิทยา ก่อตั้งขึ้นเพื่อมุ่งเน้นการพัฒนาผู้เรียน
-        ทั้งด้านวิชาการ คุณธรรม และทักษะชีวิต ตั้งแต่อดีตจนถึงปัจจุบัน
+        โรงเรียนประสารวิทยา มุ่งพัฒนาผู้เรียนทั้งด้านวิชาการ
+        คุณธรรม และทักษะชีวิต ตั้งแต่อดีตถึงปัจจุบัน
     </p>
 </section>
 
-<!-- School Management System -->
-<section id="sms" class="section blue">
-    <h2>💻 ระบบบริหารโรงเรียน (School Bright)</h2>
-    <p>
-        School Bright เป็นระบบบริหารจัดการโรงเรียน
-        ที่โรงเรียนประสารวิทยาใช้งานร่วมกับพาร์ทเนอร์
-        เพื่อเพิ่มประสิทธิภาพในการจัดการเรียนการสอน
-    </p>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="section">
+<!-- CONTACT -->
+<section id="contact">
     <h2>📞 ติดต่อเรา</h2>
     <p>
-        โรงเรียนประสารวิทยา<br>
-        โทร: 0XX-XXX-XXXX<br>
+        โทร: 0XX-XXX-XXXX <br>
         Email: info@prasarn.ac.th
     </p>
 </section>
@@ -99,6 +178,11 @@
     © 2024 Prasarnwittaya School Student Council
 </footer>
 
-<script src="js/script.js"></script>
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
