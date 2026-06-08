@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHOOL BRIGHT | PRASARNWITTAYA SCHOOL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            scroll-behavior: smooth;
+            color: #334155;
+        }
+        
+        /* สีกำหนดเองโทนส้ม */
+        .bg-primary { background-color: #f97316; } /* Orange 500 */
+        .text-primary { color: #f97316; }
+        .bg-primary-light { background-color: #fff7ed; } /* Orange 50 */
+        
+        .hero-section {
+            background: #ffffff;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-circle {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: rgba(249, 115, 22, 0.05); /* Orange Opacity */
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .qa-grid-item {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .qa-grid-item:hover {
+            border-color: #f97316;
+            background: #fff7ed;
+            transform: translateY(-4px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-minimal {
+            transition: all 0.3s ease;
+            border: 2px solid #f97316;
+        }
+        .btn-minimal:hover {
+            background: #f97316;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-[100] border-b border-slate-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="PSCC NO BG.png" alt="School Logo" class="w-10 h-10 object-contain" onerror="this.src='https://via.placeholder.com/100?text=PSCC'">
+                <div class="flex flex-col border-l border-slate-200 pl-4">
+                    <span class="font-bold text-sm text-slate-800 tracking-tight leading-tight">สภานักเรียนโรงเรียนประสารวิทยา</span>
+                    <span class="text-[10px] text-orange-500 font-medium uppercase tracking-widest">Student Council 2024</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-medium text-slate-500 hover:text-primary transition flex items-center gap-2">
+                    <i class="fas fa-arrow-left text-xs"></i> กลับหน้าหลัก
+                </a>
+                <a href="#beyond-classroom" class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-orange-500/20 transition">
+                    SCHOOL BRIGHT
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section px-6">
+        <div class="hero-circle"></div>
+        <div class="container mx-auto relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-orange-50 text-primary px-4 py-1.5 rounded-full mb-6 border border-orange-100">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-wider">Digital Transformation</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-[1.1]">
+                    ยกระดับโรงเรียนสู่ <br>
+                    <span class="text-primary italic">ยุคดิจิทัล</span> อย่างสมบูรณ์
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 mb-10 leading-relaxed font-light">
+                    ระบบบริหารจัดการสถานศึกษา SCHOOL BRIGHT ออกแบบมาเพื่อเพิ่มประสิทธิภาพการทำงานของครู และเชื่อมต่อความสัมพันธ์ระหว่างโรงเรียนและผู้ปกครอง
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#beyond-classroom" class="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-orange-500/20 hover:scale-105 transition">
+                        ทำความรู้จักระบบ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <section id="beyond-classroom" class="py-32">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-bold text-slate-900 mb-4">ทำไมต้อง SCHOOL BRIGHT?</h2>
+                    <p class="text-slate-500 text-lg">นวัตกรรมที่เปลี่ยนการบริหารจัดการโรงเรียนให้เป็นเรื่องง่าย สะดวก และรวดเร็ว</p>
+                </div>
+                <div class="hidden md:block h-px flex-1 bg-slate-100 mx-12 mb-4"></div>
+            </div>
+
+            <!-- Minimal Q&A Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
+                <!-- Card 1 -->
+                <div class="qa-grid-item p-10 rounded-3xl reveal bg-white">
+                    <div class="w-12 h-12 bg-orange-50 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-xl mb-4 leading-snug">ออกแบบเพื่อโรงเรียนไทย</h4>
+                    <p class="text-slate-500 leading-relaxed text-sm">ครอบคลุมทุกมิติการบริหารจัดการ ทั้งงานวิชาการ งานปกครอง และงานธุรการในแพลตฟอร์มเดียว</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="qa-grid-item p-10 rounded-3xl reveal bg-white">
+                    <div class="w-12 h-12 bg-orange-50 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-xl mb-4 leading-snug">ลดภาระงานเอกสาร</h4>
+                    <p class="text-slate-500 leading-relaxed text-sm">ระบบอัตโนมัติในการเช็คชื่อ กรอกคะแนน และออกรายงาน ช่วยให้ครูมีเวลาโฟกัสการพัฒนาการสอนมากขึ้น</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="qa-grid-item p-10 rounded-3xl reveal bg-white">
+                    <div class="w-12 h-12 bg-orange-50 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-xl mb-4 leading-snug">สื่อสารแบบ Real-time</h4>
+                    <p class="text-slate-500 leading-relaxed text-sm">ผู้ปกครองติดตามผลการเรียน พฤติกรรม และข่าวสารผ่านแอปพลิเคชันมือถือได้ทันที</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="qa-grid-item p-10 rounded-3xl reveal bg-white">
+                    <div class="w-12 h-12 bg-orange-50 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-xl mb-4 leading-snug">ความปลอดภัยมาตรฐานสูง</h4>
+                    <p class="text-slate-500 leading-relaxed text-sm">จัดเก็บด้วยระบบ Cloud ที่มีมาตรฐานความปลอดภัยสูง พร้อมการสำรองข้อมูลอย่างสม่ำเสมอ</p>
+                </div>
+
+                <!-- Card 5 (Highlighted) -->
+                <div class="qa-grid-item p-10 rounded-3xl bg-primary reveal shadow-2xl shadow-orange-500/20 border-none">
+                    <div class="w-12 h-12 bg-white/20 text-white rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-fingerprint text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-xl mb-4 leading-snug">ระบบเช็คชื่ออัจฉริยะ</h4>
+                    <p class="text-orange-50 leading-relaxed text-sm font-light">รองรับใบหน้าและการ์ด พร้อมแจ้งเตือนถึงผู้ปกครองทันทีเมื่อนักเรียนเข้าหรือออกโรงเรียน</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="qa-grid-item p-10 rounded-3xl reveal border-dashed border-2">
+                    <div class="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-xl mb-4 leading-snug">ก้าวสู่โรงเรียน Paperless</h4>
+                    <p class="text-slate-500 leading-relaxed text-sm">เปลี่ยนเอกสารราชการให้เป็นรูปแบบดิจิทัลทั้งหมด ลดค่าใช้จ่าย และเพิ่มประสิทธิภาพสูงสุด</p>
+                </div>
+            </div>
+
+            <!-- Minimal Quote -->
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <div class="w-16 h-1 bg-primary mx-auto mb-10 opacity-20"></div>
+                <h3 class="text-2xl md:text-4xl text-slate-800 font-light italic leading-relaxed mb-10">
+                    "เทคโนโลยีไม่ได้มาแทนที่ครู แต่จะมาช่วยให้ครูทำงานได้ง่ายขึ้น เพื่อเป้าหมายสูงสุดคือคุณภาพการศึกษาของนักเรียนทุกคน"
+                </h3>
+                <p class="font-bold text-primary tracking-[0.2em] text-sm uppercase">SCHOOL BRIGHT TEAM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-100 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <img src="PSCC NO BG.png" alt="Footer Logo" class="w-16 h-16 mx-auto mb-8 grayscale opacity-50 transition hover:grayscale-0 hover:opacity-100" onerror="this.src='https://via.placeholder.com/100'">
+            <h4 class="font-bold text-slate-900 mb-2 uppercase tracking-tight">คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา</h4>
+            <p class="text-orange-500 text-[10px] uppercase tracking-[0.4em] mb-10 font-bold">Academic Year 2024 • Student Council</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-sm text-slate-500 mb-12">
+                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-orange-400"></i> 162/5 หมู่ 14 ต.สีคิ้ว อ.สีคิ้ว จ.นครราชสีมา</span>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-200/60 inline-block">
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest">
+                    &copy; 2024 PRASARNWITTAYA SCHOOL. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.onload = reveal;
+    </script>
+
+</body>
+</html>
