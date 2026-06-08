@@ -1,74 +1,209 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เกี่ยวกับโรงเรียน | PSC 2024</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลโรงเรียนประสารวิทยา | School Information</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            scroll-behavior: smooth;
+            color: #334155;
+            background-color: #ffffff;
+        }
+        .text-school-blue { color: #1e3a8a; }
+        .bg-school-blue { background-color: #1e3a8a; }
+        .bg-school-yellow { background-color: #facc15; }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+            margin: 3rem 0;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+        .facility-card {
+            transition: all 0.2s ease;
+            border: 1px solid #f1f5f9;
+        }
+        .facility-card:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+        }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
+    <!-- Navigation -->
+    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="image_87828e.png" alt="School Logo" class="w-10 h-10 object-contain" onerror="this.src='https://via.placeholder.com/40'">
+                <div>
+                    <h2 class="font-bold text-slate-800 leading-none text-base">โรงเรียนประสารวิทยา</h2>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Prasarnwittaya School</p>
+                </div>
+            </div>
+            <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-school-blue transition flex items-center gap-2">
+                <i class="fas fa-arrow-left text-xs"></i> กลับหน้าหลัก
+            </a>
+        </div>
+    </nav>
 
-<nav>
-    <h1>PSC 2024</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul id="menu">
-        <li><a href="index.html">หน้าแรก</a></li>
-        <li><a href="news.html">ข่าวสาร</a></li>
-        <li><a href="school.html" class="active">เกี่ยวกับโรงเรียน</a></li>
-        <li><a href="contact.html">ติดต่อเรา</a></li>
-    </ul>
-</nav>
+    <!-- Simple Hero -->
+    <header class="py-20 bg-slate-50 border-b border-slate-100">
+        <div class="container mx-auto px-6 text-center">
+            <span class="inline-block px-4 py-1.5 bg-white border border-slate-200 text-slate-600 text-xs font-bold tracking-widest rounded-full mb-6">
+                SCHOOL PROFILE
+            </span>
+            <h1 class="hero-title text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                โรงเรียนประสารวิทยา
+            </h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto font-light leading-relaxed">
+                "เรียนดี มีวินัย ใฝ่คุณธรรม นำพัฒนาการ"
+            </p>
+            <div class="mt-8 flex justify-center items-center gap-4 text-sm font-medium">
+                <span class="text-slate-400">อักษรย่อ:</span>
+                <span class="px-3 py-1 bg-school-blue text-white rounded">ป.ว.</span>
+            </div>
+        </div>
+    </header>
 
-<header class="page-header">
-    <h2>โรงเรียนประสารวิทยา</h2>
-    <p>Prasarnwittaya School</p>
-</header>
+    <!-- Core Information -->
+    <main class="py-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            
+            <!-- Identity & Location Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+                <!-- Identity -->
+                <div>
+                    <h3 class="text-xs font-bold text-school-blue uppercase tracking-[0.2em] mb-8 flex items-center gap-2">
+                        <span class="w-8 h-[2px] bg-school-blue"></span> อัตลักษณ์และสีประจำโรงเรียน
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-700 shadow-inner flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 mb-1">สีน้ำเงิน</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed">หมายถึง ผู้ที่มีความเชื่อมั่น มีความสงบสุข</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-yellow-400 shadow-inner flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 mb-1">สีเหลือง</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed">หมายถึง ความสง่างาม มีปัญญาและศีลธรรม</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section>
-    <div class="card-grid">
-        <div class="card reveal delay-1">
-            <h3>📜 ประวัติโรงเรียน</h3>
-            <p>
-                โรงเรียนประสารวิทยา ก่อตั้งขึ้นเพื่อมุ่งเน้นการพัฒนาผู้เรียน
-                อย่างรอบด้าน ทั้งด้านวิชาการ คุณธรรม และเทคโนโลยี
-                จากอดีตจนถึงปัจจุบัน โรงเรียนได้สร้างบุคลากรที่มีคุณภาพสู่สังคม
+                <!-- Location -->
+                <div>
+                    <h3 class="text-xs font-bold text-school-blue uppercase tracking-[0.2em] mb-8 flex items-center gap-2">
+                        <span class="w-8 h-[2px] bg-school-blue"></span> สถานที่ตั้ง
+                    </h3>
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                        <i class="fas fa-map-marker-alt text-school-blue text-2xl mb-4"></i>
+                        <p class="text-slate-700 leading-loose">
+                            เลขที่ 162/5 หมู่ที่ 14 ถนนรื่นจิตร ตำบลสีคิ้ว <br>
+                            อำเภอสีคิ้ว จังหวัดนครราชสีมา 30140
+                        </p>
+                        <hr class="my-6 border-slate-200">
+                        <p class="text-sm text-slate-500 italic">
+                            ตั้งอยู่ใจกลางอำเภอสีคิ้ว มอบสภาพแวดล้อมที่เหมาะสมต่อการเรียนรู้
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- History Section -->
+            <div class="mb-20">
+                <h3 class="text-xs font-bold text-school-blue uppercase tracking-[0.2em] mb-10 text-center">ประวัติความเป็นมา</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="p-8 border border-slate-100 rounded-3xl hover:border-slate-200 transition">
+                        <p class="text-slate-600 leading-loose">
+                            <strong>โรงเรียนประสารวิทยา</strong> เป็นโรงเรียนเอกชนประเภทสามัญศึกษา สังกัดสำนักบริหารงานคณะกรรมการส่งเสริมการศึกษาเอกชน กระทรวงศึกษาธิการ จัดตั้งขึ้นโดย <strong>นางเครือวัลย์ วัลลิภากร</strong> ตามพระราชบัญญัติโรงเรียนเอกชน ใบอนุญาตเลขที่ 6 / 2523 ลงวันที่ 22 พฤษภาคม พ.ศ. 2523
+                        </p>
+                    </div>
+                    <div class="p-8 border border-slate-100 rounded-3xl hover:border-slate-200 transition">
+                        <p class="text-slate-600 leading-loose">
+                            ปัจจุบันบริหารงานโดย <strong>นางจินตนา ลวิตรังสิมา</strong> (ผู้รับใบอนุญาตและผู้จัดการ) และ <strong>นางสาวปิยนุช ด่านกุล</strong> (ผู้อำนวยการสถานศึกษา) บนเนื้อที่รวม 13 ไร่ พร้อมอาคารเรียนที่ทันสมัย 5 หลัง เพื่อรองรับนักเรียนได้สูงสุด 1,680 คน
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- Facilities Section -->
+            <div class="mb-20">
+                <h3 class="text-xs font-bold text-school-blue uppercase tracking-[0.2em] mb-10 text-center">แหล่งเรียนรู้และห้องปฏิบัติการ</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-headphones-alt text-blue-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">ห้องปฏิบัติการทางภาษา</span>
+                    </div>
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-microscope text-emerald-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">ห้องวิทยาศาสตร์</span>
+                    </div>
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-laptop text-indigo-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">ห้องคอมพิวเตอร์</span>
+                    </div>
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-swimming-pool text-sky-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">สระว่ายน้ำ</span>
+                    </div>
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-music text-rose-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">ห้องดนตรี</span>
+                    </div>
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-book text-amber-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">ห้องสมุด</span>
+                    </div>
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-palette text-purple-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">ห้องศิลปะ/นาฎศิลป์</span>
+                    </div>
+                    <div class="facility-card p-6 rounded-2xl text-center">
+                        <i class="fas fa-university text-orange-500 mb-3 block text-xl"></i>
+                        <span class="text-sm font-medium">ห้องจริยธรรม</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-8 bg-slate-900 rounded-3xl text-white text-center shadow-xl">
+                    <i class="fas fa-crown text-school-yellow text-3xl mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">รางวัลเกียรติยศ</h4>
+                    <p class="text-slate-400 font-light">
+                        สถานศึกษาที่ได้รับรางวัลพระราชทานระดับก่อนประถมศึกษา (ขนาดใหญ่)
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="bg-white border-t border-slate-100 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-400 text-xs tracking-widest uppercase mb-4">Student Council of Prasarnwittaya School © 2024</p>
+            <p class="text-slate-400 text-[10px] max-w-md mx-auto leading-relaxed">
+                162/5 หมู่ 14 ต.สีคิ้ว อ.สีคิ้ว จ.นครราชสีมา 30140 <br>
+                สังกัดสำนักบริหารงานคณะกรรมการส่งเสริมการศึกษาเอกชน กระทรวงศึกษาธิการ
             </p>
         </div>
+    </footer>
 
-        <div class="card reveal delay-2">
-            <h3>🎯 วิสัยทัศน์</h3>
-            <p>
-                มุ่งพัฒนาผู้เรียนให้มีความรู้ ความสามารถ
-                มีคุณธรรม จริยธรรม และพร้อมปรับตัวสู่สังคมโลก
-            </p>
-        </div>
-
-        <div class="card reveal delay-3">
-            <h3>💙💛 อัตลักษณ์</h3>
-            <p>
-                สีน้ำเงิน – ความรู้ ความมั่นคง<br>
-                สีเหลือง – คุณธรรม ความเจริญรุ่งเรือง<br>
-                สีขาว – ความบริสุทธิ์ ซื่อสัตย์
-            </p>
-        </div>
-    </div>
-
-    <div class="center-btn">
-        <a href="school-bright.html" class="btn-primary">
-            ระบบบริหารโรงเรียน (School Bright)
-        </a>
-    </div>
-
-    
-</section>
-
-<footer>
-© 2024 Prasarnwittaya School Student Council
-</footer>
-
-<script src="js/script.js"></script>
 </body>
 </html>
