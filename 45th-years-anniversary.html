@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45 ปี โรงเรียนประสารวิทยา</title>
+    <!-- Google Fonts: Mitr & Noto Sans SC for Chinese support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Mitr', 'Noto Sans SC', sans-serif;
+            background-color: #ffffff;
+            color: #1e3a8a;
+            overflow-x: hidden;
+        }
+        .bg-blue-primary { background-color: #1e3a8a; }
+        .text-yellow-primary { color: #facc15; }
+        .bg-yellow-primary { background-color: #facc15; }
+        .border-yellow-primary { border-color: #facc15; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: float 10s infinite alternate ease-in-out;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-50px) rotate(20deg); }
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .countdown-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.1), 0 8px 10px -6px rgba(30, 58, 138, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-shadow:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -10px rgba(30, 58, 138, 0.2);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #facc15;
+            border: 4px solid #1e3a8a;
+            box-shadow: 0 0 10px #facc15;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .qa-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .qa-card:hover {
+            border-color: #facc15;
+            background-color: #fefce8;
+            transform: translateY(-5px);
+        }
+
+        .btn-go-back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .feature-icon {
+            @apply w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-sm;
+        }
+
+        /* Language Switcher Styles */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 110;
+            display: flex;
+            gap: 5px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 5px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .lang-btn {
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background-color: #facc15;
+            color: #1e3a8a;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button onclick="changeLang('th')" id="btn-th" class="lang-btn active">TH</button>
+        <button onclick="changeLang('en')" id="btn-en" class="lang-btn">EN</button>
+        <button onclick="changeLang('cn')" id="btn-cn" class="lang-btn">CN</button>
+    </div>
+
+    <!-- ปุ่ม GO BACK -->
+    <a href="index.html" class="btn-go-back bg-white/20 hover:bg-white/40 backdrop-blur-md text-white border border-white/30 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="group-hover:-translate-x-1 transition-transform">
+            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+        </svg>
+        <span class="text-sm font-medium">GO BACK</span>
+    </a>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-16 px-4 text-center border-b-8 border-yellow-primary">
+        <div class="hero-circle w-64 h-64 -left-20 -top-20"></div>
+        <div class="hero-circle w-40 h-40 -right-10 bottom-20"></div>
+
+        <div class="max-w-4xl mx-auto pt-8 relative z-10" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="mb-6 inline-block p-4 bg-white rounded-3xl shadow-xl transform hover:rotate-6 transition-transform">
+                <img src="0.jpg" alt="โลโก้โรงเรียนประสารวิทยา" class="h-24 md:h-28 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
+                <div id="fallback-logo" style="display:none;">
+                    <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="#1e3a8a" stroke-width="2"/>
+                        <path d="M30 70 L50 30 L70 70 Z" fill="#facc15"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 data-t="hero_title" class="text-3xl md:text-5xl font-semibold mb-2 text-white">ครบรอบ 45 ปี โรงเรียนประสารวิทยา</h1>
+            <h2 class="text-4xl md:text-7xl text-yellow-primary font-bold my-4 tracking-tight drop-shadow-md">" Beyond The Classroom "</h2>
+            <p data-t="hero_subtitle" class="text-lg md:text-2xl opacity-90 font-light mt-4 italic">เรียนดี มีวินัย ใฝ่คุณธรรม นำพัฒนาการ</p>
+            
+            <div class="mt-12 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div id="countdown" class="flex justify-center gap-3 md:gap-6">
+                    <div class="countdown-item rounded-xl p-3 md:p-5 min-w-[70px] md:min-w-[100px]">
+                        <div id="days" class="text-2xl md:text-5xl font-bold">00</div>
+                        <div data-t="cd_days" class="text-[10px] md:text-sm opacity-80 uppercase tracking-widest">Days</div>
+                    </div>
+                    <div class="countdown-item rounded-xl p-3 md:p-5 min-w-[70px] md:min-w-[100px]">
+                        <div id="hours" class="text-2xl md:text-5xl font-bold">00</div>
+                        <div data-t="cd_hours" class="text-[10px] md:text-sm opacity-80 uppercase tracking-widest">Hrs</div>
+                    </div>
+                    <div class="countdown-item rounded-xl p-3 md:p-5 min-w-[70px] md:min-w-[100px]">
+                        <div id="minutes" class="text-2xl md:text-5xl font-bold">00</div>
+                        <div data-t="cd_mins" class="text-[10px] md:text-sm opacity-80 uppercase tracking-widest">Mins</div>
+                    </div>
+                    <div class="countdown-item rounded-xl p-3 md:p-5 min-w-[70px] md:min-w-[100px] border-yellow-primary bg-yellow-primary text-blue-900 shadow-lg">
+                        <div id="seconds" class="text-2xl md:text-5xl font-bold">00</div>
+                        <div data-t="cd_secs" class="text-[10px] md:text-sm opacity-80 font-bold uppercase tracking-widest">Secs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Highlights Summary -->
+        <section class="grid md:grid-cols-3 gap-8 mb-16 text-center" data-aos="fade-up">
+            <div class="p-8 bg-white border-2 border-blue-primary rounded-2xl card-shadow">
+                <div class="text-4xl mb-4">📅</div>
+                <h3 data-t="hl1_title" class="text-xl font-semibold mb-2">วันที่จัดงาน</h3>
+                <p data-t="hl1_val" class="text-gray-600 font-medium">วันเสาร์ที่ 17 มกราคม 2569</p>
+                <p data-t="hl1_loc" class="text-sm text-gray-500 mt-1">ณ ลานอาคารอเนกประสงค์<br>โรงเรียนประสารวิทยา</p>
+            </div>
+            <div class="p-8 bg-yellow-primary text-blue-primary rounded-2xl card-shadow">
+                <div class="text-4xl mb-4">⏰</div>
+                <h3 data-t="hl2_title" class="text-xl font-semibold mb-2">เวลาเริ่มงาน</h3>
+                <p class="text-2xl font-bold">18:00 น.</p>
+                <p data-t="hl2_val" class="font-medium">เป็นต้นไป</p>
+            </div>
+            <div class="p-8 bg-white border-2 border-blue-primary rounded-2xl card-shadow relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-6 py-1 rotate-45 translate-x-4 translate-y-2 text-xs font-bold uppercase">Hot!</div>
+                <div class="text-4xl mb-4">🏠</div>
+                <h3 data-t="hl3_title" class="text-xl font-semibold mb-2">คืนสู่เหย้าชาวประสาร</h3>
+                <p data-t="hl3_val" class="text-red-600 font-bold italic underline">รีบจองโต๊ะก่อนเต็ม!</p>
+                <p data-t="hl3_sub" class="text-xs text-gray-500 mt-2">(จำนวนจำกัดใกล้เต็มแล้ว)</p>
+            </div>
+        </section>
+
+        <!-- Video Highlights Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-8" data-aos="fade-right">
+                <div class="w-3 h-10 bg-red-600 mr-4 rounded-full"></div>
+                <h2 data-t="sec_video_title" class="text-3xl font-bold tracking-tight text-blue-900">วิดีโอแนะนำ & บรรยากาศ</h2>
+            </div>
+            
+            <div class="card-shadow rounded-2xl bg-white p-6 mb-8 border border-gray-100" data-aos="zoom-in">
+                <h4 data-t="video_h4" class="font-bold text-blue-800 text-xl mb-4 flex items-center">
+                    <span class="mr-2 text-red-600">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </span>
+                    วิดีโอไฮไลท์งาน 45 ปี ประสารวิทยา
+                </h4>
+                <div class="video-container shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/1KF5YXDv3mA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 rounded-3xl p-6 md:p-8" data-aos="fade-up">
+                <h4 data-t="fb_h4" class="font-bold text-blue-900 text-lg mb-6 flex items-center">
+                    <span class="mr-2 text-blue-600">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </span>
+                    บรรยากาศกิจกรรมจาก Facebook
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <a href="https://www.facebook.com/share/v/14Vec34VjxK/" target="_blank" class="bg-white p-4 rounded-2xl card-shadow hover:scale-105 transition-transform group">
+                        <div class="bg-gray-100 rounded-xl aspect-video flex items-center justify-center mb-3 group-hover:bg-blue-100 transition-colors">
+                            <span data-t="fb_vid_1" class="text-blue-600 font-medium">🎬 บรรยากาศ 1</span>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/share/v/1C1ZTdfDFY/" target="_blank" class="bg-white p-4 rounded-2xl card-shadow hover:scale-105 transition-transform group">
+                        <div class="bg-gray-100 rounded-xl aspect-video flex items-center justify-center mb-3 group-hover:bg-blue-100 transition-colors">
+                            <span data-t="fb_vid_2" class="text-blue-600 font-medium">🎬 บรรยากาศ 2</span>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/share/v/1BzoNFgew1/" target="_blank" class="bg-white p-4 rounded-2xl card-shadow hover:scale-105 transition-transform group">
+                        <div class="bg-gray-100 rounded-xl aspect-video flex items-center justify-center mb-3 group-hover:bg-blue-100 transition-colors">
+                            <span data-t="fb_vid_3" class="text-blue-600 font-medium">🎬 บรรยากาศ 3</span>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/share/v/1AdtX8apuz/" target="_blank" class="bg-white p-4 rounded-2xl card-shadow hover:scale-105 transition-transform group">
+                        <div class="bg-gray-100 rounded-xl aspect-video flex items-center justify-center mb-3 group-hover:bg-blue-100 transition-colors">
+                            <span data-t="fb_vid_4" class="text-blue-600 font-medium">🎬 บรรยากาศ 4</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Schedule Section -->
+        <section class="mb-16 bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-200 overflow-hidden">
+            <div class="text-center mb-10" data-aos="fade-down">
+                <h2 data-t="sec_sched_title" class="text-3xl font-bold text-blue-900 mb-2">กำหนดการกิจกรรม</h2>
+                <div class="h-1 w-20 bg-yellow-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto border-l-2 border-blue-200 ml-4 md:ml-auto">
+                <!-- Day 1 -->
+                <div class="mb-10 relative pl-8" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 card-shadow">
+                        <h4 class="text-blue-900 font-bold text-lg mb-2 flex items-center">
+                            <span data-t="sched_d1_date" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm mr-3">วันศุกร์ที่ 16 มกราคม 2569</span>
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="flex">
+                                <span class="font-bold text-blue-800 min-w-[80px]">09.30 น.</span>
+                                <div>
+                                    <p data-t="sched_d1_text" class="font-medium text-blue-900 leading-tight">พิธีทอดผ้าป่าเพื่อการศึกษา</p>
+                                    <p data-t="sched_d1_loc" class="text-sm text-gray-500 mt-1 italic">ณ ห้องประชุมราชพฤกษ์ โรงเรียนประสารวิทยา</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="relative pl-8" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 card-shadow">
+                        <h4 class="text-blue-900 font-bold text-lg mb-2 flex items-center">
+                            <span data-t="sched_d2_date" class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-lg text-sm mr-3">วันเสาร์ที่ 17 มกราคม 2569</span>
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex">
+                                <span class="font-bold text-blue-800 min-w-[80px]">18.00 น.</span>
+                                <div>
+                                    <p data-t="sched_d2_text" class="font-medium text-lg text-blue-900">งานคืนสู่เหย้าชาวประสาร 45 ปี</p>
+                                    <p data-t="sched_d2_sub" class="text-gray-600 text-sm">กิจกรรมกินเลี้ยง สังสรรค์ พบปะศิษย์เก่าทุกรุ่น</p>
+                                    <p data-t="sched_d2_loc" class="text-xs text-gray-500 mt-2 italic underline decoration-yellow-500">ณ ลานอาคารอเนกประสงค์ โรงเรียนประสารวิทยา</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-10" data-aos="fade-right">
+                <div class="w-3 h-10 bg-blue-primary mr-4 rounded-full"></div>
+                <h2 data-t="sec_news_title" class="text-3xl font-bold tracking-tight text-blue-900">อัปเดตข่าวสารกิจกรรม</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Homecoming -->
+                <article class="flex flex-col bg-white rounded-3xl overflow-hidden card-shadow border border-gray-100" data-aos="fade-up">
+                    <div class="bg-blue-primary p-8 text-white relative overflow-hidden">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full"></div>
+                        <span data-t="news1_badge" class="bg-yellow-primary text-blue-900 px-4 py-1 rounded-full text-xs font-bold mb-4 inline-block uppercase tracking-widest">ข่าวสารสำคัญ #1</span>
+                        <h3 data-t="news1_title" class="text-2xl font-bold mb-2">พร้อมหรือยัง? ที่จะกลับไปเป็น "นักเรียน" อีกครั้ง!</h3>
+                        <p data-t="news1_sub" class="text-yellow-primary/90 font-medium italic text-sm">"45 ปี คืนสู่เหย้าชาวประสาร"</p>
+                    </div>
+                    <div class="p-8">
+                        <div data-t="news1_body" class="text-gray-700 space-y-4 leading-relaxed text-sm">
+                            <p>ในชีวิตจริงเราอาจจะเติบโตไปไกลตามคอนเซ็ปต์ <span class="font-bold text-blue-800">"BEYOND THE CLASSROOM"</span> แต่สิ่งหนึ่งที่ไม่เคยเปลี่ยนคือ... <span class="italic">"ความทรงจำดี ๆ"</span> ในรั้วประสาร</p>
+                            <p>กลับมาร่วมสร้างรอยยิ้ม เสียงหัวเราะ ให้หัวใจพองโตอีกครั้ง กับบรรยากาศที่อบอุ่นเหมือนวันวาน</p>
+                        </div>
+                        
+                        <div class="mt-8 grid grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
+                                <p data-t="news_time_label" class="text-[10px] text-blue-500 font-bold uppercase mb-1">วัน/เวลา</p>
+                                <p class="text-sm font-bold text-blue-900">17 ม.ค. 69 <br>18.00 น.</p>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded-2xl border border-yellow-100">
+                                <p data-t="news_price_label" class="text-[10px] text-yellow-600 font-bold uppercase mb-1">ราคาโต๊ะจีน</p>
+                                <p class="text-sm font-bold text-blue-900">3,200.- <br><span data-t="news_price_sub" class="text-[10px] font-normal">(8 ที่นั่ง/โต๊ะ)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-6 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200">
+                            <p data-t="news_contact_label" class="text-blue-900 font-bold mb-3 text-center">สนใจจองบัตร/โต๊ะ ติดต่อ:</p>
+                            <div class="flex flex-col items-center gap-2">
+                                <a href="tel:0863690405" class="flex items-center gap-2 text-blue-800 hover:text-blue-600 transition-colors">
+                                    <span class="text-lg">📞</span> <span class="font-bold">086-369-0405</span>
+                                </a>
+                                <div class="flex items-center gap-2 text-green-700">
+                                    <span class="text-lg">💬</span> LINE ID: <span class="font-bold">prasarnwittaya</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Phapa -->
+                <article class="flex flex-col bg-white rounded-3xl overflow-hidden card-shadow border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-yellow-primary p-8 text-blue-900 relative overflow-hidden">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-blue-900/5 rounded-full"></div>
+                        <span data-t="news2_badge" class="bg-blue-primary text-white px-4 py-1 rounded-full text-xs font-bold mb-4 inline-block uppercase tracking-widest">ข่าวสารสำคัญ #2</span>
+                        <h3 data-t="news2_title" class="text-2xl font-bold mb-2 leading-tight">ขอเชิญร่วมเป็นเจ้าภาพ <br>ทอดผ้าป่าเพื่อการศึกษา</h3>
+                    </div>
+                    <div class="p-8">
+                        <p data-t="news2_body" class="text-gray-700 mb-6 italic leading-relaxed text-sm">เพื่อสมทบทุนจัดซื้อ <span class="font-bold text-blue-900">อุปกรณ์วงดุริยางค์</span> ส่งเสริมศักยภาพของนักเรียนให้ก้าวสู่ความเป็นเลิศทางดนตรี</p>
+                        
+                        <div class="mb-8 p-4 bg-blue-900 text-white rounded-2xl relative shadow-lg">
+                            <div class="flex justify-between items-center mb-4 border-b border-blue-700 pb-2">
+                                <span data-t="donate_label" class="text-xs font-bold uppercase tracking-wider text-yellow-primary">ช่องทางการบริจาค</span>
+                                <span class="text-[10px] opacity-70 italic">K-BANK</span>
+                            </div>
+                            <div class="text-center py-2">
+                                <p data-t="bank_name" class="text-xs opacity-80 mb-1">ชื่อบัญชี: โรงเรียนประสารวิทยา</p>
+                                <p class="text-2xl font-bold tracking-[0.15em] text-yellow-primary">138-8-04979-7</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 data-t="coord_label" class="font-bold text-blue-900 text-sm border-b pb-2">ผู้ประสานงาน:</h4>
+                            <div class="grid grid-cols-1 gap-3">
+                                <div class="flex justify-between items-center text-sm p-3 bg-gray-50 rounded-xl hover:bg-white hover:shadow-sm border border-transparent hover:border-blue-100 transition-all">
+                                    <span data-t="coord1" class="font-medium text-gray-700">ครูสุภาพร (ครูองุ่น)</span>
+                                    <a href="tel:0813938766" class="font-bold text-blue-700">081-393-8766</a>
+                                </div>
+                                <div class="flex justify-between items-center text-sm p-3 bg-gray-50 rounded-xl hover:bg-white hover:shadow-sm border border-transparent hover:border-blue-100 transition-all">
+                                    <span data-t="coord2" class="font-medium text-gray-700">ครูสุพัชชา (ครูหน่อย)</span>
+                                    <a href="tel:0810698247" class="font-bold text-blue-700">081-069-8247</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- BEYOND THE CLASSROOM Section -->
+    <section id="beyond-classroom" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-black text-blue-900 mb-6 uppercase italic tracking-wider">BEYOND THE CLASSROOM</h2>
+                <div class="h-2 w-32 bg-yellow-primary mx-auto rounded-full mb-10"></div>
+                
+                <!-- Quote Section -->
+                <div class="max-w-4xl mx-auto bg-slate-50 p-10 rounded-[3rem] border-l-8 border-blue-primary relative shadow-inner overflow-hidden">
+                    <p data-t="quote1_body" class="text-xl md:text-2xl text-slate-700 leading-relaxed relative z-10 italic font-medium">
+                        "เรียนดี มีวินัย ไฝ่คุณธรรม นำพัฒนาการ ไม่ใช่เพียงแค่คำขวัญหรือปรัชญาที่ดังกึกก้องอยู่ทั่วโรงเรียนเท่านั้นแต่เป็นสิ่งที่โรงเรียนปลูกฝังนักเรียนทุกคนมากว่า 45 ปี"
+                    </p>
+                    <p data-t="quote1_author" class="mt-6 font-bold text-blue-primary text-xl">— กิตติ เชี่ยวสกุล</p>
+                </div>
+            </div>
+
+            <!-- Dimensions of Development -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+                <div class="qa-card p-8 rounded-[2.5rem] bg-gradient-to-br from-blue-50 to-white border border-blue-100 shadow-sm" data-aos="fade-up">
+                    <div class="feature-icon bg-blue-600 text-white">❤️</div>
+                    <h3 data-t="dim1_title" class="text-xl font-bold text-blue-900 mb-4">Life Skills & Foundation</h3>
+                    <ul data-t="dim1_list" class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>ความสุขนำการเรียน:</strong> สร้างทัศนคติที่ดีต่อการมาโรงเรียน</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>สภาพแวดล้อม:</strong> อ้อมกอดที่อบอุ่น (Sense of Belonging)</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>ระเบียบวินัย:</strong> ฝึกฝนผ่านความเข้าใจ</span></li>
+                    </ul>
+                </div>
+
+                <div class="qa-card p-8 rounded-[2.5rem] bg-gradient-to-br from-yellow-50 to-white border border-yellow-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon bg-yellow-400 text-blue-900">🤖</div>
+                    <h3 data-t="dim2_title" class="text-xl font-bold text-blue-900 mb-4">Technology & Innovation</h3>
+                    <ul data-t="dim2_list" class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>AI & Robotics:</strong> สร้างทักษะปัญญาประดิษฐ์</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>3D Technology:</strong> ออกแบบและสร้างชิ้นงานจริง</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>Unplug Coding:</strong> ฝึกตรรกะโดยไม่ใช้คอมฯ</span></li>
+                    </ul>
+                </div>
+
+                <div class="qa-card p-8 rounded-[2.5rem] bg-gradient-to-br from-red-50 to-white border border-red-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon bg-red-500 text-white">🧠</div>
+                    <h3 data-t="dim3_title" class="text-xl font-bold text-blue-900 mb-4">Cognitive & Brain</h3>
+                    <ul data-t="dim3_list" class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>Executive Functions (EF):</strong> ฝึกการวางแผนแก้ปัญหา</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>STEMs:</strong> บูรณาการวิทย์-คณิต พัฒนากลไกการคิด</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>จินตคณิต & ศิลปะ:</strong> สมดุลสมองซีกซ้ายและขวา</span></li>
+                    </ul>
+                </div>
+
+                <div class="qa-card p-8 rounded-[2.5rem] bg-gradient-to-br from-green-50 to-white border border-green-100 shadow-sm" data-aos="fade-up">
+                    <div class="feature-icon bg-green-500 text-white">🗣️</div>
+                    <h3 data-t="dim4_title" class="text-xl font-bold text-blue-900 mb-4">Communication & Social</h3>
+                    <ul data-t="dim4_list" class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>Natural Learning:</strong> ภาษาที่เป็นธรรมชาติ สร้างความมั่นใจ</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>Active Listening:</strong> ฝึกการฟังและแบ่งปัน</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>Social Skill:</strong> การอยู่ร่วมกันในสังคมอย่างมีความสุข</span></li>
+                    </ul>
+                </div>
+
+                <div class="qa-card p-8 rounded-[2.5rem] bg-gradient-to-br from-purple-50 to-white border border-purple-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon bg-purple-500 text-white">🏃</div>
+                    <h3 data-t="dim5_title" class="text-xl font-bold text-blue-900 mb-4">Physical & Habits</h3>
+                    <ul data-t="dim5_list" class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>Physical:</strong> พัฒนาการเคลื่อนไหวที่แข็งแรง</span></li>
+                        <li class="flex items-start gap-2"><span>●</span> <span><strong>Reading Habit:</strong> ปลูกฝังนิสัยรักการอ่านตลอดชีวิต</span></li>
+                    </ul>
+                </div>
+
+                <div class="p-8 rounded-[2.5rem] bg-blue-primary text-white flex flex-col justify-center text-center shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 data-t="dim_summary_title" class="text-2xl font-bold mb-4">บทสรุป 45 ปี</h3>
+                    <p data-t="dim_summary_body" class="text-blue-100 text-sm leading-relaxed">มุ่งสร้างเด็กที่มีความพร้อมทั้ง "ความรู้" และ "ความสุข" เพื่อเติบโตไปเป็นส่วนหนึ่งของสังคมที่สดใสได้อย่างมั่นคง</p>
+                </div>
+            </div>
+
+            <!-- Q&A Section -->
+            <div id="faq" class="py-12">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h3 data-t="faq_title" class="text-3xl font-bold text-blue-900 mb-2">คำถามที่พบบ่อย (Q&A)</h3>
+                    <div class="h-1 w-16 bg-yellow-primary mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Q1 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">1</span>
+                            <h4 data-t="q1" class="font-bold text-blue-900">โรงเรียนประสารวิทยามีอัตลักษณ์และความโดดเด่นอย่างไร?</h4>
+                        </div>
+                        <p data-t="a1" class="text-slate-600 text-sm leading-relaxed ml-9">เน้นผสมผสานการเรียนรู้ด้านวิชาการควบคู่กับทักษะชีวิต สอนว่ายน้ำ เสริมทักษะเทคโนโลยี เช่น Coding, 3D Printing, Robotics และเน้นภาษาอังกฤษ-จีน ให้เด็กก้าวทันโลกยุคปัจจุบัน</p>
+                    </div>
+                    <!-- Q2 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">2</span>
+                            <h4 data-t="q2" class="font-bold text-blue-900">โรงเรียนประสารวิทยาเน้นการพัฒนาเด็กในด้านใดบ้าง?</h4>
+                        </div>
+                        <p data-t="a2" class="text-slate-600 text-sm leading-relaxed ml-9">พัฒนาอย่างรอบด้าน ทั้งร่างกาย อารมณ์ สังคม และสติปัญญา พร้อมเสริมทักษะชีวิต เช่น การช่วยเหลือตัวเอง การเล่นร่วมกับผู้อื่น และการสื่อสารภาษาต่างประเทศอย่างเข้มข้น</p>
+                    </div>
+                    <!-- Q3 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">3</span>
+                            <h4 data-t="q3" class="font-bold text-blue-900">บรรยากาศและสภาพแวดล้อมภายในโรงเรียนเป็นอย่างไร?</h4>
+                        </div>
+                        <p data-t="a3" class="text-slate-600 text-sm leading-relaxed ml-9">สร้างบรรยากาศที่อบอุ่น มั่นคง ปลอดภัย ให้เด็กรู้สึกเหมือนอยู่บ้าน เพื่อส่งเสริมความสุขและความพร้อมในการเรียนรู้ มีสภาพแวดล้อมที่เอื้อต่อกิจกรรมสร้างสรรค์</p>
+                    </div>
+                    <!-- Q4 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">4</span>
+                            <h4 data-t="q4" class="font-bold text-blue-900">ครูที่โรงเรียนประสารวิทยามีบทบาทอย่างไรในการดูแลเด็ก?</h4>
+                        </div>
+                        <p data-t="a4" class="text-slate-600 text-sm leading-relaxed ml-9">ทำหน้าที่เป็นโค้ชและพี่เลี้ยงที่ดูแลอย่างใกล้ชิด กระตุ้นการเรียนรู้ เปิดใจรับฟัง และสนับสนุนเด็กตามศักยภาพของแต่ละคน พร้อมเป็นต้นแบบที่ดีสม่ำเสมอ</p>
+                    </div>
+                    <!-- Q5 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">5</span>
+                            <h4 data-t="q5" class="font-bold text-blue-900">โครงการสวนชีวิตชีวาคืออะไรและมีประโยชน์อย่างไร?</h4>
+                        </div>
+                        <p data-t="a5" class="text-slate-600 text-sm leading-relaxed ml-9">คือแหล่งเรียนรู้เกษตรอินทรีย์ที่เด็กได้ลงมือทำจริง เช่น ปลูกข้าว เลี้ยงปลา ช่วยให้เข้าใจระบบนิเวศและการอยู่ร่วมกับธรรมชาติอย่างยั่งยืนผ่านประสบการณ์ตรง</p>
+                    </div>
+                    <!-- Q6 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">6</span>
+                            <h4 data-t="q6" class="font-bold text-blue-900">โครงการสวนชีวิตชีวาช่วยพัฒนาเด็กอย่างไร?</h4>
+                        </div>
+                        <p data-t="a6" class="text-slate-600 text-sm leading-relaxed ml-9">ช่วยให้เรียนรู้ผ่านการลงมือทำจริง เห็นกระบวนการตั้งแต่ต้นจนจบ ลดความกลัว เพิ่มความมั่นใจ และปลูกฝังนิสัยรักสิ่งแวดล้อมและการใช้ชีวิตที่ยั่งยืน</p>
+                    </div>
+                    <!-- Q7 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">7</span>
+                            <h4 data-t="q7" class="font-bold text-blue-900">วิสัยทัศน์อย่างไรสำหรับอนาคตของทักเรียน?</h4>
+                        </div>
+                        <p data-t="a7" class="text-slate-600 text-sm leading-relaxed ml-9">สร้างคนดีที่มีคุณธรรมและวินัยควบคู่กับความเก่ง มีทักษะชีวิตที่พร้อมดูแลตัวเองและครอบครัว เป็นประชากรที่มีคุณภาพ และรักการเรียนรู้ตลอดชีวิต</p>
+                    </div>
+                    <!-- Q8 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">8</span>
+                            <h4 data-t="q8" class="font-bold text-blue-900">การเรียนการสอนในระดับอนุบาลมีลักษณะอย่างไร?</h4>
+                        </div>
+                        <p data-t="a8" class="text-slate-600 text-sm leading-relaxed ml-9">อาคารเรียนออกแบบให้ใกล้ชิดธรรมชาติ บูรณาการทักษะชีวิตในกิจกรรมประจำวัน เช่น การใส่รองเท้า ทานข้าวเอง เพื่อพัฒนาความเป็นตัวของตัวเองและความพร้อมรอบด้าน</p>
+                    </div>
+                    <!-- Q9 -->
+                    <div class="qa-card p-6 rounded-2xl border border-slate-100 bg-white shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-blue-primary text-white w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">9</span>
+                            <h4 data-t="q9" class="font-bold text-blue-900">โรงเรียนมีกิจกรรมส่งเสริมทักษะชีวิตอะไรบ้าง?</h4>
+                        </div>
+                        <p data-t="a9" class="text-slate-600 text-sm leading-relaxed ml-9">มีทั้งดนตรี กีฬา ฟุตซอล เทคโนโลยี Coding, 3D Printing, Robotics และภาษาอังกฤษ-จีน พร้อมสนับสนุนตามความชอบและความถนัดเฉพาะบุคคล</p>
+                    </div>
+                    <!-- Q10 -->
+                    <div class="qa-card p-6 rounded-2xl border-2 border-yellow-200 bg-yellow-50" data-aos="fade-up">
+                        <div class="flex items-start mb-2">
+                            <span class="bg-yellow-primary text-blue-primary w-6 h-6 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-xs mt-1">10</span>
+                            <h4 data-t="q10" class="font-bold text-blue-900">ผู้ปกครองควรมั่นใจอะไรเมื่อเลือกที่นี่?</h4>
+                        </div>
+                        <p data-t="a10" class="text-slate-600 text-sm leading-relaxed ml-9 font-medium">มั่นใจได้ว่าโรงเรียนมีความพร้อมดูแลเด็กทุกช่วงวัย มีคุณภาพการสอนจากครูมืออาชีพ และประสบการณ์กว่า 45 ปีในการพัฒนาเด็กให้พร้อมสู่สังคมโลก</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Conclusion Quote -->
+            <div class="mt-24 text-center max-w-4xl mx-auto border-t-2 border-slate-100 pt-16 mb-20" data-aos="fade-up">
+                <p data-t="quote2_body" class="text-xl md:text-2xl text-blue-900 leading-relaxed font-light italic">
+                    "จากเมล็ดข้าวเล็กๆ สู่การเรียนรู้และการเติบโตที่โรงเรียนประสารวิทยาแห่งนี้ ไม่ใช่เพียงแค่สถานที่ที่จะมอบความรู้ให้กับเด็กๆ เท่านั้น แต่สถานที่แห่งนี้จะหล่อมรวมความรู้ คุณธรรม และประสบการณ์ชีวิตเพื่อให้เด็กๆ ทุกคนก้าวสู่อนาคตอย่างมั่นใจ เติบโตอย่างมีความสุข อบอุ่นดั่งครอบครัว มั่นคงดั่งรากไม้ และสวยงามดั่งธรรมชาติครับ"
+                </p>
+                <p data-t="quote2_author" class="mt-8 font-bold text-blue-primary text-2xl">— กิตติ เชี่ยวสกุล</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 border-t py-16 text-center text-blue-900">
+        <div class="max-w-4xl mx-auto px-4">
+            <img src="0.jpg" alt="โลโก้โรงเรียนประสารวิทยา" class="h-20 mx-auto mb-6 grayscale hover:grayscale-0 transition-all cursor-pointer transform hover:scale-110" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <h3 class="font-bold mb-2 text-2xl tracking-tighter uppercase">Prasarnwittaya School</h3>
+            <p data-t="footer_sub" class="text-sm text-gray-400 italic mb-8">" Beyond The Classroom เรียนรู้อย่างต่อเนื่องจากห้องเรียนสู่โลกกว้าง "</p>
+            <div class="flex flex-wrap justify-center gap-6 mb-10">
+                <span class="bg-white border px-6 py-3 rounded-full shadow-sm font-bold text-blue-800">☎️ 086-369-0405</span>
+                <span class="bg-white border px-6 py-3 rounded-full shadow-sm font-bold text-green-700">💬 LINE: prasarnwittaya</span>
+            </div>
+            <p data-t="footer_copy" class="text-[11px] text-gray-400 font-bold tracking-[0.3em] uppercase leading-loose">
+                &copy; 2026 STUDENT COUNCIL OF PRASARNWITTAYA SCHOOL <br>ALL RIGHTS RESERVED
+            </p>
+        </div>
+    </footer>
+
+    <!-- Translations and Scripts -->
+    <script>
+        const translations = {
+            th: {
+                hero_title: "ครบรอบ 45 ปี โรงเรียนประสารวิทยา",
+                hero_subtitle: "เรียนดี มีวินัย ใฝ่คุณธรรม นำพัฒนาการ",
+                cd_days: "วัน", cd_hours: "ชั่วโมง", cd_mins: "นาที", cd_secs: "วินาที",
+                hl1_title: "วันที่จัดงาน", hl1_val: "วันเสาร์ที่ 17 มกราคม 2569", hl1_loc: "ณ ลานอาคารอเนกประสงค์ โรงเรียนประสารวิทยา",
+                hl2_title: "เวลาเริ่มงาน", hl2_val: "เป็นต้นไป",
+                hl3_title: "คืนสู่เหย้าชาวประสาร", hl3_val: "รีบจองโต๊ะก่อนเต็ม!", hl3_sub: "(จำนวนจำกัดใกล้เต็มแล้ว)",
+                sec_video_title: "วิดีโอแนะนำ & บรรยากาศ",
+                video_h4: "วิดีโอไฮไลท์งาน 45 ปี ประสารวิทยา",
+                fb_h4: "บรรยากาศกิจกรรมจาก Facebook",
+                fb_vid_1: "🎬 บรรยากาศ 1", fb_vid_2: "🎬 บรรยากาศ 2", fb_vid_3: "🎬 บรรยากาศ 3", fb_vid_4: "🎬 บรรยากาศ 4",
+                sec_sched_title: "กำหนดการกิจกรรม",
+                sched_d1_date: "วันศุกร์ที่ 16 มกราคม 2569", sched_d1_text: "พิธีทอดผ้าป่าเพื่อการศึกษา", sched_d1_loc: "ณ ห้องประชุมราชพฤกษ์ โรงเรียนประสารวิทยา",
+                sched_d2_date: "วันเสาร์ที่ 17 มกราคม 2569", sched_d2_text: "งานคืนสู่เหย้าชาวประสาร 45 ปี", sched_d2_sub: "กิจกรรมกินเลี้ยง สังสรรค์ พบปะศิษย์เก่าทุกรุ่น", sched_d2_loc: "ณ ลานอาคารอเนกประสงค์ โรงเรียนประสารวิทยา",
+                sec_news_title: "อัปเดตข่าวสารกิจกรรม",
+                news1_badge: "ข่าวสารสำคัญ #1", news1_title: "พร้อมหรือยัง? ที่จะกลับไปเป็น 'นักเรียน' อีกครั้ง!", news1_sub: "'45 ปี คืนสู่เหย้าชาวประสาร'",
+                news1_body: "<p>ในชีวิตจริงเราอาจจะเติบโตไปไกลตามคอนเซ็ปต์ <span class='font-bold text-blue-800'>'BEYOND THE CLASSROOM'</span> แต่สิ่งหนึ่งที่ไม่เคยเปลี่ยนคือ... <span class='italic'>'ความทรงจำดี ๆ'</span> ในรั้วประสาร</p><p>กลับมาร่วมสร้างรอยยิ้ม เสียงหัวเราะ ให้หัวใจพองโตอีกครั้ง กับบรรยากาศที่อบอุ่นเหมือนวันวาน</p>",
+                news_time_label: "วัน/เวลา", news_price_label: "ราคาโต๊ะจีน", news_price_sub: "(8 ที่นั่ง/โต๊ะ)", news_contact_label: "สนใจจองบัตร/โต๊ะ ติดต่อ:",
+                news2_badge: "ข่าวสารสำคัญ #2", news2_title: "ขอเชิญร่วมเป็นเจ้าภาพ ทอดผ้าป่าเพื่อการศึกษา",
+                news2_body: "เพื่อสมทบทุนจัดซื้อ <span class='font-bold text-blue-900'>อุปกรณ์วงดุริยางค์</span> ส่งเสริมศักยภาพของนักเรียนให้ก้าวสู่ความเป็นเลิศทางดนตรี",
+                donate_label: "ช่องทางการบริจาค", bank_name: "ชื่อบัญชี: โรงเรียนประสารวิทยา", coord_label: "ผู้ประสานงาน:",
+                coord1: "ครูสุภาพร (ครูองุ่น)", coord2: "ครูสุพัชชา (ครูหน่อย)",
+                quote1_body: "'เรียนดี มีวินัย ไฝ่คุณธรรม นำพัฒนาการ ไม่ใช่เพียงแค่คำขวัญหรือปรัชญาที่ดังกึกก้องอยู่ทั่วโรงเรียนเท่านั้นแต่เป็นสิ่งที่โรงเรียนปลูกฝังนักเรียนทุกคนมากว่า 45 ปี'",
+                quote1_author: "— กิตติ เชี่ยวสกุล",
+                dim1_title: "Life Skills & Foundation", dim1_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>ความสุขนำการเรียน:</strong> สร้างทัศนคติที่ดีต่อการมาโรงเรียน</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>สภาพแวดล้อม:</strong> อ้อมกอดที่อบอุ่น (Sense of Belonging)</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>ระเบียบวินัย:</strong> ฝึกฝนผ่านความเข้าใจ</span></li>",
+                dim2_title: "Technology & Innovation", dim2_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>AI & Robotics:</strong> สร้างทักษะปัญญาประดิษฐ์</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>3D Technology:</strong> ออกแบบและสร้างชิ้นงานจริง</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Unplug Coding:</strong> ฝึกตรรกะโดยไม่ใช้คอมฯ</span></li>",
+                dim3_title: "Cognitive & Brain", dim3_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>Executive Functions (EF):</strong> ฝึกการวางแผนแก้ปัญหา</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>STEMs:</strong> บูรณาการวิทย์-คณิต พัฒนากลไกการคิด</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>จินตคณิต & ศิลปะ:</strong> สมดุลสมองซีกซ้ายและขวา</span></li>",
+                dim4_title: "Communication & Social", dim4_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>Natural Learning:</strong> ภาษาที่เป็นธรรมชาติ สร้างความมั่นใจ</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Active Listening:</strong> ฝึกการฟังและแบ่งปัน</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Social Skill:</strong> การอยู่ร่วมกันในสังคมอย่างมีความสุข</span></li>",
+                dim5_title: "Physical & Habits", dim5_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>Physical:</strong> พัฒนาการเคลื่อนไหวที่แข็งแรง</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Reading Habit:</strong> ปลูกฝังนิสัยรักการอ่านตลอดชีวิต</span></li>",
+                dim_summary_title: "บทสรุป 45 ปี", dim_summary_body: "มุ่งสร้างเด็กที่มีความพร้อมทั้ง 'ความรู้' และ 'ความสุข' เพื่อเติบโตไปเป็นส่วนหนึ่งของสังคมที่สดใสได้อย่างมั่นคง",
+                faq_title: "คำถามที่พบบ่อย (Q&A)",
+                q1: "โรงเรียนประสารวิทยามีอัตลักษณ์และความโดดเด่นอย่างไร?", a1: "เน้นผสมผสานการเรียนรู้ด้านวิชาการควบคู่กับทักษะชีวิต สอนว่ายน้ำ เสริมทักษะเทคโนโลยี เช่น Coding, 3D Printing, Robotics และเน้นภาษาอังกฤษ-จีน ให้เด็กก้าวทันโลกยุคปัจจุบัน",
+                q2: "โรงเรียนประสารวิทยาเน้นการพัฒนาเด็กในด้านใดบ้าง?", a2: "พัฒนาอย่างรอบด้าน ทั้งร่างกาย อารมณ์ สังคม และสติปัญญา พร้อมเสริมทักษะชีวิต เช่น การช่วยเหลือตัวเอง การเล่นร่วมกับผู้อื่น และการสื่อสารภาษาต่างประเทศอย่างเข้มข้น",
+                q3: "บรรยากาศและสภาพแวดล้อมภายในโรงเรียนเป็นอย่างไร?", a3: "สร้างบรรยากาศที่อบอุ่น มั่นคง ปลอดภัย ให้เด็กรู้สึกเหมือนอยู่บ้าน เพื่อส่งเสริมความสุขและความพร้อมในการเรียนรู้ มีสภาพแวดล้อมที่เอื้อต่อกิจกรรมสร้างสรรค์",
+                q4: "ครูที่โรงเรียนประสารวิทยามีบทบาทอย่างไรในการดูแลเด็ก?", a4: "ทำหน้าที่เป็นโค้ชและพี่เลี้ยงที่ดูแลอย่างใกล้ชิด กระตุ้นการเรียนรู้ เปิดใจรับฟัง และสนับสนุนเด็กตามศักยภาพของแต่ละคน พร้อมเป็นต้นแบบที่ดีสม่ำเสมอ",
+                q5: "โครงการสวนชีวิตชีวาคืออะไรและมีประโยชน์อย่างไร?", a5: "คือแหล่งเรียนรู้เกษตรอินทรีย์ที่เด็กได้ลงมือทำจริง เช่น ปลูกข้าว เลี้ยงปลา ช่วยให้เข้าใจระบบนิเวศและการอยู่ร่วมกับธรรมชาติอย่างยั่งยืนผ่านประสบการณ์ตรง",
+                q6: "โครงการสวนชีวิตชีวาช่วยพัฒนาเด็กอย่างไร?", a6: "ช่วยให้เรียนรู้ผ่านการลงมือทำจริง เห็นกระบวนการตั้งแต่ต้นจนจบ ลดความกลัว เพิ่มความมั่นใจ และปลูกฝังนิสัยรักสิ่งแวดล้อมและการใช้ชีวิตที่ยั่งยืน",
+                q7: "วิสัยทัศน์อย่างไรสำหรับอนาคตของทักเรียน?", a7: "สร้างคนดีที่มีคุณธรรมและวินัยควบคู่กับความเก่ง มีทักษะชีวิตที่พร้อมดูแลตัวเองและครอบครัว เป็นประชากรที่มีคุณภาพ และรักการเรียนรู้ตลอดชีวิต",
+                q8: "การเรียนการสอนในระดับอนุบาลมีลักษณะอย่างไร?", a8: "อาคารเรียนออกแบบให้ใกล้ชิดธรรมชาติ บูรณาการทักษะชีวิตในกิจกรรมประจำวัน เช่น การใส่รองเท้า ทานข้าวเอง เพื่อพัฒนาความเป็นตัวของตัวเองและความพร้อมรอบด้าน",
+                q9: "โรงเรียนมีกิจกรรมส่งเสริมทักษะชีวิตอะไรบ้าง?", a9: "มีทั้งดนตรี กีฬา ฟุตซอล เทคโนโลยี Coding, 3D Printing, Robotics และภาษาอังกฤษ-จีน พร้อมสนับสนุนตามความชอบและความถนัดเฉพาะบุคคล",
+                q10: "ผู้ปกครองควรมั่นใจอะไรเมื่อเลือกที่นี่?", a10: "มั่นใจได้ว่าโรงเรียนมีความพร้อมดูแลเด็กทุกช่วงวัย มีคุณภาพการสอนจากครูมืออาชีพ และประสบการณ์กว่า 45 ปีในการพัฒนาเด็กให้พร้อมสู่สังคมโลก",
+                quote2_body: "“จากเมล็ดข้าวเล็กๆ สู่การเรียนรู้และการเติบโตที่โรงเรียนประสารวิทยาแห่งนี้ ไม่ใช่เพียงแค่สถานที่ที่จะมอบความรู้ให้กับเด็กๆ เท่านั้น แต่สถานที่แห่งนี้จะหล่อมรวมความรู้ คุณธรรม และประสบการณ์ชีวิตเพื่อให้เด็กๆ ทุกคนก้าวสู่อนาคตอย่างมั่นใจ เติบโตอย่างมีความสุข อบอุ่นดั่งครอบครัว มั่นคงดั่งรากไม้ และสวยงามดั่งธรรมชาติครับ”",
+                quote2_author: "— กิตติ เชี่ยวสกุล",
+                footer_sub: "' Beyond The Classroom เรียนรู้อย่างต่อเนื่องจากห้องเรียนสู่โลกกว้าง '",
+                footer_copy: "&copy; 2026 STUDENT COUNCIL OF PRASARNWITTAYA SCHOOL <br>ALL RIGHTS RESERVED"
+            },
+            en: {
+                hero_title: "45th Anniversary of Prasarnwittaya School",
+                hero_subtitle: "Good Learning, Discipline, Morality, Leading Development",
+                cd_days: "Days", cd_hours: "Hrs", cd_mins: "Mins", cd_secs: "Secs",
+                hl1_title: "Event Date", hl1_val: "Saturday, January 17, 2026", hl1_loc: "At Multi-purpose Court, Prasarnwittaya School",
+                hl2_title: "Start Time", hl2_val: "Onwards",
+                hl3_title: "Prasarn Reunion", hl3_val: "Book your table now!", hl3_sub: "(Limited seats available)",
+                sec_video_title: "Intro & Atmosphere",
+                video_h4: "45th Anniversary Highlight Video",
+                fb_h4: "Facebook Activities Gallery",
+                fb_vid_1: "🎬 Atmosphere 1", fb_vid_2: "🎬 Atmosphere 2", fb_vid_3: "🎬 Atmosphere 3", fb_vid_4: "🎬 Atmosphere 4",
+                sec_sched_title: "Event Schedule",
+                sched_d1_date: "Friday, Jan 16, 2026", sched_d1_text: "Educational Merit-making Ceremony", sched_d1_loc: "At Ratchapruek Hall, Prasarnwittaya School",
+                sched_d2_date: "Saturday, Jan 17, 2026", sched_d2_text: "45th Anniversary Homecoming Party", sched_d2_sub: "Banquet and Alumni Gathering", sched_d2_loc: "At Multi-purpose Court, Prasarnwittaya School",
+                sec_news_title: "Event News Updates",
+                news1_badge: "IMPORTANT NEWS #1", news1_title: "Ready to be a 'Student' again?", news1_sub: "'45 Years of Prasarn Reunion'",
+                news1_body: "<p>In real life, we may grow far according to the <span class='font-bold text-blue-800'>'BEYOND THE CLASSROOM'</span> concept, but one thing that never changes is... <span class='italic'>'Good Memories'</span> at Prasarn.</p><p>Join us to recreate smiles and laughter once again in an atmosphere warm as before.</p>",
+                news_time_label: "Date/Time", news_price_label: "Chinese Table Price", news_price_sub: "(8 Seats/Table)", news_contact_label: "For booking, contact:",
+                news2_badge: "IMPORTANT NEWS #2", news2_title: "Invitation to Host Educational Phapa",
+                news2_body: "To contribute funds for purchasing <span class='font-bold text-blue-900'>Marching Band Equipment</span> to enhance musical excellence for students.",
+                donate_label: "Donation Channel", bank_name: "Account: Prasarnwittaya School", coord_label: "Coordinators:",
+                coord1: "T. Supaporn (Angun)", coord2: "T. Supatcha (Noi)",
+                quote1_body: "'Excellence in learning, discipline, and morality aren't just slogans; they are values we've instilled in our students for over 45 years.'",
+                quote1_author: "— Kitti Chieosakul",
+                dim1_title: "Life Skills & Foundation", dim1_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>Happiness First:</strong> Creating a positive attitude toward school.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Environment:</strong> A warm embrace (Sense of Belonging).</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Discipline:</strong> Training through understanding.</span></li>",
+                dim2_title: "Technology & Innovation", dim2_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>AI & Robotics:</strong> Building artificial intelligence skills.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>3D Technology:</strong> Design and actual creation.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Unplug Coding:</strong> Logic training without computers.</span></li>",
+                dim3_title: "Cognitive & Brain", dim3_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>Executive Functions (EF):</strong> Planning and problem-solving skills.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>STEMs:</strong> Integration of Science-Math.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Math & Arts:</strong> Left and right brain balance.</span></li>",
+                dim4_title: "Communication & Social", dim4_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>Natural Learning:</strong> Natural language building confidence.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Active Listening:</strong> Practice listening and sharing.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Social Skill:</strong> Living happily in society.</span></li>",
+                dim5_title: "Physical & Habits", dim5_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>Physical:</strong> Healthy movement development.</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>Reading Habit:</strong> Cultivating a lifelong love of reading.</span></li>",
+                dim_summary_title: "45-Year Summary", dim_summary_body: "Aiming to build children with 'Knowledge' and 'Happiness' to grow firmly in society.",
+                faq_title: "Frequently Asked Questions (Q&A)",
+                q1: "What are the unique identities of Prasarnwittaya?", a1: "Integration of academics with life skills, swimming lessons, and tech skills like Coding, 3D Printing, Robotics, and English-Chinese languages.",
+                q2: "What areas of development does the school focus on?", a2: "Holistic development: Physical, Emotional, Social, and Intellectual, alongside life skills like self-help and foreign communication.",
+                q3: "What is the atmosphere and environment like?", a3: "Warm, stable, and safe, making children feel at home to promote happiness and learning readiness.",
+                q4: "What is the role of teachers in caring for children?", a4: "Coaches and mentors who care closely, stimulate learning, listen, and support each child's potential.",
+                q5: "What is the 'Lively Garden' project?", a5: "An organic farming learning center where children practice rice planting and fish farming for direct experience.",
+                q6: "How does the 'Lively Garden' help develop children?", a6: "Direct learning through doing, seeing processes from start to finish, reducing fear, and increasing confidence.",
+                q7: "What is the vision for the students' future?", a7: "Building good people with morality and discipline alongside excellence, ready to care for family as quality citizens.",
+                q8: "What is the kindergarten teaching style?", a8: "Buildings designed close to nature, integrating life skills into daily activities like dressing and eating independently.",
+                q9: "What skill-promoting activities are available?", a9: "Music, sports, futsal, technology (Coding, 3D, Robotics), and English-Chinese, supported by individual interest.",
+                q10: "Why should parents be confident in choosing this school?", a10: "45 years of professional teaching experience in developing children for global society.",
+                quote2_body: "'From a tiny grain of rice to growth at Prasarnwittaya. This is not just a place of knowledge, but a fusion of morality and life experience to lead students to a happy and confident future.'",
+                quote2_author: "— Kitti Chieosakul",
+                footer_sub: "' Beyond The Classroom: Continuous learning from the classroom to the wide world '",
+                footer_copy: "&copy; 2026 STUDENT COUNCIL OF PRASARNWITTAYA SCHOOL <br>ALL RIGHTS RESERVED"
+            },
+            cn: {
+                hero_title: "普萨威塔雅学校成立 45 周年",
+                hero_subtitle: "好学、纪律、道德、引领发展",
+                cd_days: "天", cd_hours: "时", cd_mins: "分", cd_secs: "秒",
+                hl1_title: "活动日期", hl1_val: "2026年1月17日 星期六", hl1_loc: "地点：普萨威塔雅学校 多功能广场",
+                hl2_title: "开始时间", hl2_val: "之后",
+                hl3_title: "校友返校日", hl3_val: "立即预订桌位！", hl3_sub: "(席位有限，预购从速)",
+                sec_video_title: "活动介绍与氛围",
+                video_h4: "45 周年纪念精彩视频",
+                fb_h4: "Facebook 活动画廊",
+                fb_vid_1: "🎬 氛围 1", fb_vid_2: "🎬 氛围 2", fb_vid_3: "🎬 氛围 3", fb_vid_4: "🎬 氛围 4",
+                sec_sched_title: "活动日程",
+                sched_d1_date: "2026年1月16日 周五", sched_d1_text: "教育慈善功德仪式", sched_d1_loc: "地点：普萨威塔雅学校 Ratchapruek 礼堂",
+                sched_d2_date: "2026年1月17日 周六", sched_d2_text: "45 周年校友返校晚宴", sched_d2_sub: "宴会与校友联欢", sched_d2_loc: "地点：普萨威塔雅学校 多功能广场",
+                sec_news_title: "活动新闻动态",
+                news1_badge: "重要新闻 #1", news1_title: "准备好再次成为“学生”了吗？", news1_sub: "“普萨返校 45 载”",
+                news1_body: "<p>在现实生活中，我们可能按照<span class='font-bold text-blue-800'>“超越课堂”</span>的概念走得很远，但有一件事永远不会改变……那就是在普萨的<span class='italic'>“美好回忆”</span>。</p><p>欢迎加入我们，在温馨如初的氛围中再次重塑微笑与笑声。</p>",
+                news_time_label: "日期/时间", news_price_label: "中式宴会桌价格", news_price_sub: "(每桌 8 位)", news_contact_label: "预订请联系：",
+                news2_badge: "重要新闻 #2", news2_title: "诚邀担任教育慈善仪式主理人",
+                news2_body: "为购买<span class='font-bold text-blue-900'>行进乐队设备</span>筹款，提升学生的音乐造诣。",
+                donate_label: "捐款渠道", bank_name: "账户名称：普萨威塔雅学校", coord_label: "协调员：",
+                coord1: "Supaporn 老师", coord2: "Supatcha 老师",
+                quote1_body: "“优良的学风、严明的纪律、高尚的道德，不仅是响彻校园的口号，更是我们 45 年来根植于每位学生心中的价值观。”",
+                quote1_author: "— Kitti Chieosakul",
+                dim1_title: "生活技能与基础", dim1_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>快乐第一：</strong> 培养积极的入学态度。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>环境：</strong> 温馨的怀抱（归属感）。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>纪律：</strong> 通过理解进行培训。</span></li>",
+                dim2_title: "科技与创新", dim2_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>AI 与机器人：</strong> 培养人工智能技能。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>3D 技术：</strong> 设计与实际创造。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>不插电编程：</strong> 无需电脑的逻辑训练。</span></li>",
+                dim3_title: "认知与大脑", dim3_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>执行功能 (EF)：</strong> 规划与解决问题的技能。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>STEM：</strong> 数理化综合教育。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>心算与艺术：</strong> 左右脑平衡发展。</span></li>",
+                dim4_title: "沟通与社交", dim4_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>自然学习：</strong> 培养自然语言的自信心。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>积极倾听：</strong> 练习倾听与分享。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>社交技能：</strong> 在社会中快乐生活。</span></li>",
+                dim5_title: "体能与习惯", dim5_list: "<li class='flex items-start gap-2'><span>●</span> <span><strong>体能：</strong> 健康的动作发育。</span></li><li class='flex items-start gap-2'><span>●</span> <span><strong>阅读习惯：</strong> 培养终身阅读的热爱。</span></li>",
+                dim_summary_title: "45 年总结", dim_summary_body: "旨在培养拥有“知识”与“快乐”的孩子，使他们在社会中稳步成长。",
+                faq_title: "常见问题 (Q&A)",
+                q1: "普萨威塔雅学校有什么独特的身份？", a1: "将学术与生活技能、游泳课以及编程、3D 打印、机器人技术等科技技能相结合，并强调英中双语教育。",
+                q2: "学校侧重于哪些方面的发展？", a2: "全面发展：包括身体、情感、社交和智力，以及自理和外语交流等生活技能。",
+                q3: "学校的氛围和环境如何？", a3: "温馨、稳定、安全，让孩子们有宾至如归的感觉，从而促进幸福感和学习准备度。",
+                q4: "教师在照顾孩子方面的作用是什么？", a4: "作为教练和导师密切关怀，激发学习兴趣，倾听并支持每个孩子的潜力。",
+                q5: "什么是“生机花园”项目？", a5: "一个有机农业学习中心，孩子们在这里练习种稻和养鱼，获得直接经验。",
+                q6: "“生机花园”如何帮助孩子发展？", a6: "通过实践直接学习，观察从开始到结束的过程，消除恐惧并增加自信。",
+                q7: "对学生未来的愿景是什么？", a7: "培养具有道德和纪律的好人，并拥有卓越的才能，准备好作为优质公民照顾家庭。",
+                q8: "幼儿园的教学风格是什么？", a8: "建筑设计亲近自然，将生活技能（如独立穿衣和进食）融入日常活动中。",
+                q9: "提供哪些技能提升活动？", a9: "音乐、运动、五人制足球、科技（编程、3D、机器人）和英中双语，根据个人兴趣提供支持。",
+                q10: "家长为何应放心选择这所学校？", a10: "拥有 45 年专业的教学经验，致力于培养面向全球社会的孩子。",
+                quote2_body: "“从一粒小小的米到普萨威塔雅学校的茁壮成长。这里不仅是知识的殿堂，更是道德与生活经验的熔炉，指引学生走向幸福与自信的未来。”",
+                quote2_author: "— Kitti Chieosakul",
+                footer_sub: "“超越课堂：从课堂到广阔世界的持续学习”",
+                footer_copy: "&copy; 2026 普萨威塔雅学校学生会 <br>版权所有"
+            }
+        };
+
+        function changeLang(lang) {
+            // Update Active Button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            // Update HTML Lang Attribute
+            document.documentElement.lang = lang;
+
+            // Apply Transitions
+            const elements = document.querySelectorAll('[data-t]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-t');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Original Countdown & AOS Scripts
+        window.onload = function() {
+            AOS.init({ duration: 800, once: true, offset: 50 });
+
+            const targetDate = new Date("January 17, 2026 18:00:00").getTime();
+            const countdownFunction = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days < 10 ? (days < 0 ? "00" : "0" + days) : days;
+                document.getElementById("hours").innerText = hours < 10 ? (hours < 0 ? "00" : "0" + hours) : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? (minutes < 0 ? "00" : "0" + minutes) : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? (seconds < 0 ? "00" : "0" + seconds) : seconds;
+
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById("countdown").innerHTML = "<h3 class='text-2xl font-bold text-yellow-primary animate-bounce'>Welcome Homecoming Day!</h3>";
+                }
+            }, 1000);
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
