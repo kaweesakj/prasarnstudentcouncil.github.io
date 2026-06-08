@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สภานักเรียนโรงเรียนประสารวิทยา | 45th Anniversary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .bg-school-blue { background-color: #1e3a8a; }
+        .text-school-blue { color: #1e3a8a; }
+        .bg-school-yellow { background-color: #facc15; }
+        .text-school-yellow { color: #facc15; }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .anniversary-badge {
+            background: linear-gradient(45deg, #d4af37, #f7e08a);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .qa-card {
+            transition: all 0.3s ease;
+        }
+        .qa-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .lang-btn.active {
+            background-color: #facc15;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-school-blue text-white sticky top-0 z-[100] shadow-xl border-b-4 border-school-yellow">
+        <div class="container mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="shrink-0">
+                    <img src="PSCC NO BG.png" alt="School Logo" class="w-12 h-12 object-contain" onerror="this.src='image_87828e.png'">
+                </div>
+                <div class="flex flex-col border-l border-white/20 pl-3">
+                    <span class="font-bold text-xs md:text-sm tracking-tight leading-tight text-white" data-key="nav-title">คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา ประจำปีการศึกษา 2567</span>
+                    <span class="text-[9px] md:text-[10px] text-school-yellow opacity-90 font-light uppercase tracking-wider">Student Council of Prasarnwittaya School (2024)</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <!-- Language Switcher -->
+                <div class="flex bg-blue-900/50 rounded-lg p-1 border border-white/10">
+                    <button onclick="changeLang('th')" id="btn-th" class="lang-btn active px-2 py-1 rounded text-[10px] md:text-xs transition">TH</button>
+                    <button onclick="changeLang('en')" id="btn-en" class="lang-btn px-2 py-1 rounded text-[10px] md:text-xs transition">EN</button>
+                    <button onclick="changeLang('cn')" id="btn-cn" class="lang-btn px-2 py-1 rounded text-[10px] md:text-xs transition">CN</button>
+                </div>
+
+                <div class="flex items-center space-x-4 md:space-x-6">
+                    <a href="index.html" class="text-[10px] md:text-xs text-slate-300 hover:text-white transition flex items-center gap-1 opacity-80 hover:opacity-100">
+                        <i class="fas fa-chevron-left"></i> <span data-key="go-back">GO BACK</span>
+                    </a>
+                    <div class="h-4 w-[1px] bg-slate-600 hidden md:block"></div>
+                    <a href="#beyond-classroom" class="hover:text-school-yellow transition text-school-yellow border-b-2 border-school-yellow pb-1 font-medium text-sm md:text-base" data-key="nav-beyond">
+                        BEYOND THE CLASSROOM
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20 px-4 text-center">
+        <div class="container mx-auto max-w-5xl">
+            <div class="mb-6 inline-block">
+                <span class="anniversary-badge text-blue-900 px-6 py-2 rounded-full font-bold text-xs tracking-[0.1em]" data-key="badge">
+                    45TH ANNIVERSARY BEYOND THE CLASSROOM
+                </span>
+            </div>
+            <h2 class="text-4xl md:text-7xl font-black mb-6 drop-shadow-2xl" id="hero-title">
+                เรียนดี มีวินัย <span class="text-school-yellow">ใฝ่คุณธรรม</span><br>นำพัฒนาการ
+            </h2>
+            <p class="text-lg md:text-2xl mb-10 font-light italic text-blue-100 max-w-3xl mx-auto" data-key="hero-sub">
+                "ไม่ใช่เพียงแค่คำขวัญที่ดังกึกก้องอยู่ทั่วโรงเรียนเท่านั้น แต่เป็นสิ่งที่โรงเรียนปลูกฝังนักเรียนทุกคนมากว่า 45 ปี"
+            </p>
+        </div>
+    </section>
+
+    <!-- BEYOND THE CLASSROOM Section -->
+    <section id="beyond-classroom" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-blue-900 mb-6 uppercase italic">BEYOND THE CLASSROOM</h2>
+                <div class="h-1.5 w-32 bg-school-yellow mx-auto rounded-full mb-10"></div>
+                
+                <!-- Quote Section -->
+                <div class="max-w-4xl mx-auto bg-slate-50 p-8 rounded-[2rem] border-l-8 border-school-blue relative shadow-inner">
+                    <i class="fas fa-quote-left absolute top-4 left-4 text-slate-200 text-6xl"></i>
+                    <p class="text-xl md:text-2xl text-slate-700 leading-relaxed relative z-10 italic" data-key="quote-main">
+                        "เรียนดี มีวินัย ไฝ่คุณธรรม นำพัฒนาการ ไม่ใช่เพียงแค่คำขวัญหรือปรัชญาที่ดังก้อนกระวันอยู่ทั่วโรงเรียนเท่านั้นแต่เป็นสิ่งที่โรงเรียนปลูกฝังนักเรียนทุกคนมากว่า 45 ปี"
+                    </p>
+                    <p class="mt-4 font-bold text-school-blue" data-key="author">— กิตติ เชี่ยวสกุล</p>
+                </div>
+            </div>
+
+            <!-- Q&A Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="qa-container">
+                <!-- Q&A cards will be populated by JS -->
+            </div>
+
+            <!-- Conclusion Quote -->
+            <div class="mt-20 text-center max-w-4xl mx-auto border-t-2 border-slate-100 pt-12 mb-20">
+                <p class="text-xl md:text-2xl text-blue-900 leading-relaxed font-light" data-key="conclusion">
+                    "จากเมล็ดข้าวเล็กๆ สู่การเรียนรู้และการเติบโตที่โรงเรียนประสารวิทยาแห่งนี้ ไม่ใช่เพียงแค่สถานที่ที่จะมอบความรู้ให้กับเด็กๆ เท่านั้น แต่สถานที่แห่งนี้จะหล่อมรวมความรู้ คุณธรรม และประสบการณ์ชีวิตเพื่อให้เด็กๆ ทุกคนก้าวสู่อนาคตอย่างมั่นใจ เติบโตอย่างมีความสุข อบอุ่นดั่งครอบครัว มั่นคงดั่งรากไม้ และสวยงามดึกธรรมชาติครับ"
+                </p>
+                <p class="mt-6 font-bold text-school-blue text-lg italic" data-key="author">— กิตติ เชี่ยวสกุล</p>
+            </div>
+
+            <!-- Video Section -->
+            <div class="max-w-4xl mx-auto mb-20">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-blue-900 uppercase tracking-widest flex items-center justify-center">
+                        <i class="fab fa-youtube text-red-600 mr-3 text-3xl"></i> <span data-key="vdo-title">VDO Highlights</span>
+                    </h3>
+                </div>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/1KF5YXDv3mA" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-8">
+                <div class="mx-auto mb-4 p-2 w-20">
+                    <img src="PSCC NO BG.png" alt="Footer Logo" class="w-full h-full object-contain" onerror="this.src='image_87828e.png'">
+                </div>
+                <h4 class="font-bold text-lg md:text-xl uppercase tracking-wider text-school-yellow" data-key="footer-title">คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา ประจำปีการศึกษา 2567</h4>
+                <p class="text-slate-300 text-xs md:text-sm mt-1 font-light italic uppercase">Student Council of Prasarnwittaya School (2024)</p>
+                <p class="text-slate-400 text-sm mt-4" data-key="address">162/5 หมู่ ที่ 14 ต.สีคิ้ว อ.สีคิ้ว จ.นครราชสีมา 30140</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8 text-xl">
+                <a href="#" class="hover:text-school-yellow transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-school-yellow transition"><i class="fab fa-line"></i></a>
+                <a href="#" class="hover:text-school-yellow transition"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="border-t border-slate-800 pt-8">
+                <p class="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-medium leading-relaxed">
+                    &copy; 2024 STUDENT COUNCIL OF PRASARNWITTAYA SCHOOL (2024) ALL RIGHTS RESERVED
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            th: {
+                "nav-title": "คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา ประจำปีการศึกษา 2567",
+                "nav-beyond": "BEYOND THE CLASSROOM",
+                "go-back": "GO BACK",
+                "badge": "45TH ANNIVERSARY BEYOND THE CLASSROOM",
+                "hero-title": 'เรียนดี มีวินัย <span class="text-school-yellow">ใฝ่คุณธรรม</span><br>นำพัฒนาการ',
+                "hero-sub": '"ไม่ใช่เพียงแค่คำขวัญที่ดังกึกก้องอยู่ทั่วโรงเรียนเท่านั้น แต่เป็นสิ่งที่โรงเรียนปลูกฝังนักเรียนทุกคนมากว่า 45 ปี"',
+                "quote-main": '"เรียนดี มีวินัย ไฝ่คุณธรรม นำพัฒนาการ ไม่ใช่เพียงแค่คำขวัญหรือปรัชญาที่ดังก้อนกระวันอยู่ทั่วโรงเรียนเท่านั้นแต่เป็นสิ่งที่โรงเรียนปลูกฝังนักเรียนทุกคนมากว่า 45 ปี"',
+                "author": "— กิตติ เชี่ยวสกุล",
+                "conclusion": '"จากเมล็ดข้าวเล็กๆ สู่การเรียนรู้และการเติบโตที่โรงเรียนประสารวิทยาแห่งนี้ ไม่ใช่เพียงแค่สถานที่ที่จะมอบความรู้ให้กับเด็กๆ เท่านั้น แต่สถานที่แห่งนี้จะหล่อมรวมความรู้ คุณธรรม และประสบการณ์ชีวิตเพื่อให้เด็กๆ ทุกคนก้าวสู่อนาคตอย่างมั่นใจ เติบโตอย่างมีความสุข อบอุ่นดั่งครอบครัว มั่นคงดั่งรากไม้ และสวยงามดึกธรรมชาติครับ"',
+                "vdo-title": "VDO Highlights",
+                "footer-title": "คณะกรรมการสภานักเรียนโรงเรียนประสารวิทยา ประจำปีการศึกษา 2567",
+                "address": "162/5 หมู่ ที่ 14 ต.สีคิ้ว อ.สีคิ้ว จ.นครราชสีมา 30140",
+                "qa": [
+                    { q: "โรงเรียนประสารวิทยามีอัตลักษณ์และความโดดเด่นอย่างไร?", a: "โรงเรียนประสารวิทยาเป็นโรงเรียนเอกชนที่เน้นผสมผสานการเรียนรู้ด้านวิชาการควบคู่กับทักษะชีวิต มีการสอนว่ายน้ำเพื่อความปลอดภัย เสริมทักษะเทคโนโลยี เช่น Coding, 3D Printing, Robotics และให้ความสำคัญกับการเรียนภาษาอังกฤษและภาษาจีน เพื่อให้เด็กก้าวทันโลกและความเปลี่ยนแปลงในยุคปัจจุบัน" },
+                    { q: "โรงเรียนประสารวิทยาเน้นการพัฒนาเด็กในด้านใดบ้าง?", a: "โรงเรียนเน้นพัฒนาเด็กอย่างรอบด้าน ทั้งด้านร่างกาย อารมณ์ สังคม และสติปัญญา พร้อมเสริมทักษะชีวิต เช่น การช่วยเหลือตัวเอง การเล่นร่วมกับผู้อื่น และการสื่อสารภาษาอังกฤษและภาษาจีนอย่างเข้มข้น" },
+                    { q: "บรรยากาศและสภาพแวดล้อมภายในโรงเรียนเป็นอย่างไร?", a: "โรงเรียนสร้างบรรยากาศที่อบอุ่น มั่นคง ปลอดภัย ให้เด็กรู้สึกเหมือนอยู่บ้าน เพื่อส่งเสริมความสุขและความพร้อมในการเรียนรู้ มีสภาพแวดล้อมที่เอื้อต่อการเรียนรู้และกิจกรรมต่างๆ" },
+                    { q: "ครูที่โรงเรียนประสารวิทยามีบทบาทอย่างไรในการดูแลเด็ก?", a: "ครูที่นี่ทำหน้าที่เป็นโค้ชและพี่เลี้ยงที่ดูแลเด็กอย่างใกล้ชิด กระตุ้นการเรียนรู้ เปิดใจรับฟัง และสนับสนุนเด็กตามความสนใจและศักยภาพของแต่ละคน พร้อมทั้งพัฒนาตนเองอย่างต่อเนื่องเพื่อเป็นต้นแบบที่ดี" },
+                    { q: "โครงการสวนชีวิตชีวาคืออะไรและมีประโยชน์อย่างไร?", a: "สวนชีวิตชีวาเป็นสถานที่เรียนรู้ที่เด็กได้ลงมือทำกิจกรรมเกษตรอินทรีย์ เช่น ปลูกข้าว เลี้ยงปลา เลี้ยงมด และเรียนรู้ระบบนิเวศอย่างครบวงจร ช่วยให้เด็กเข้าใจการอยู่ร่วมกับธรรมชาติอย่างยั่งยืน และส่งเสริมทักษะชีวิตผ่านประสบการณ์จริง", highlight: true },
+                    { q: "โครงการสวนชีวิตชีวาช่วยพัฒนาเด็กอย่างไร?", a: "โครงการช่วยให้เด็กได้เรียนรู้ผ่านการลงมือทำจริง เห็นกระบวนการตั้งแต่ต้นจนจบ ลดความกลัว และเพิ่มความมั่นใจในการทำกิจกรรมต่างๆ รวมทั้งปลูกฝังการแยกขยะและการใช้ชีวิตอย่างยั่งยืน", highlight: true },
+                    { q: "วิสัยทัศน์อย่างไรสำหรับอนาคตของนักเรียน?", a: "วิสัยทัศน์ของโรงเรียนคือการสร้างคนดีที่มีคุณธรรมและวินัยควบคู่กับความเก่ง มีทักษะชีวิตที่พร้อมดูแลตัวเองและครอบครัว เป็นประชากรที่ดีของประเทศ และรักการเรียนรู้ตลอดชีวิต" },
+                    { q: "การเรียนการสอนในระดับอนุบาลมีลักษณะอย่างไร?", a: "ระดับอนุบาลมีอาคารเรียนที่ออกแบบให้เด็กใกล้ชิดธรรมชาติ รับแสงและอากาศธรรมชาติ มีการบูรณาการทักษะชีวิตในกิจกรรมประจำวัน เช่น การใส่รองเท้า กินข้าวเอง และเล่นร่วมกับผู้อื่น เพื่อพัฒนาเด็กอย่างรอบด้าน" },
+                    { q: "โรงเรียนมีกิจกรรมส่งเสริมทักษะชีวิตอะไรบ้าง?", a: "มีกิจกรรมหลากหลาย เช่น ดนตรี กีฬา ฟุตซอล เทคโนโลยี Coding 3D Printing Robotics และการเรียนภาษาอังกฤษและภาษาจีน พร้อมสนับสนุนเด็กตามความชอบและศักยภาพของแต่ละคน" },
+                    { q: "ผู้ปกครองควรมั่นใจอะไรเมื่อเลือกที่นี่?", a: "ผู้ปกครองมั่นใจได้ว่าโรงเรียนมีความพร้อมในการดูแลเด็กทุกช่วงวัย มีคุณภาพการเรียนการสอนที่ดี มีครูที่เป็นมืออาชีพ และมีประสบการณ์มากกว่า 45 ปีในการพัฒนาเด็กให้มีคุณภาพเข้าสู่สังคมโลก" }
+                ]
+            },
+            en: {
+                "nav-title": "Prasarnwittaya School Student Council Committee, Academic Year 2024",
+                "nav-beyond": "BEYOND THE CLASSROOM",
+                "go-back": "GO BACK",
+                "badge": "45TH ANNIVERSARY BEYOND THE CLASSROOM",
+                "hero-title": 'Academic Excellence, Discipline, <span class="text-school-yellow">Moral Integrity</span><br>Leading Development',
+                "hero-sub": '"It is not just a slogan echoed throughout the school, but a foundation that the school has cultivated in every student for over 45 years."',
+                "quote-main": '"Academic Excellence, Discipline, Moral Integrity, Leading Development is not just a slogan or philosophy that echoes through the school, but what the school has instilled in every student for over 45 years."',
+                "author": "— Kitti Chieosakul",
+                "conclusion": '"From a tiny grain of rice to the learning and growth at Prasarnwittaya School, this is not just a place that imparts knowledge. This place will merge knowledge, virtue, and life experiences so that every child moves into the future with confidence, growing happily, warm as a family, stable as roots, and beautiful as nature."',
+                "vdo-title": "Video Highlights",
+                "footer-title": "Prasarnwittaya School Student Council 2024",
+                "address": "162/5 Moo 14, Sikhio Subdistrict, Sikhio District, Nakhon Ratchasima 30140",
+                "qa": [
+                    { q: "What is the identity and uniqueness of Prasarnwittaya School?", a: "Prasarnwittaya is a private school focusing on academic learning combined with life skills. We provide swimming lessons for safety, enhance tech skills like Coding, 3D Printing, and Robotics, and emphasize English and Chinese to keep students ahead in today's changing world." },
+                    { q: "What areas does the school focus on for child development?", a: "We focus on holistic development: physical, emotional, social, and intellectual. Life skills like self-care, social interaction, and intensive English and Chinese communication are integrated into the curriculum." },
+                    { q: "What is the atmosphere and environment within the school?", a: "We create a warm, stable, and safe atmosphere where children feel at home to promote happiness and readiness for learning. The environment is designed to facilitate both study and activities." },
+                    { q: "What role do teachers play in caring for students?", a: "Our teachers act as coaches and mentors, closely monitoring each child, stimulating learning, listening with an open mind, and supporting students based on their individual interests and potential while being role models." },
+                    { q: "What is the 'Vitality Garden' project and its benefits?", a: "The Vitality Garden is a learning space where children engage in organic farming, such as growing rice, raising fish, and studying ecosystems. It helps children understand sustainable living and promotes life skills through hands-on experience.", highlight: true },
+                    { q: "How does the Vitality Garden project develop children?", a: "It allows children to learn by doing, seeing processes from start to finish, reducing fear, and increasing confidence. It also instills values regarding waste separation and sustainable living.", highlight: true },
+                    { q: "What is the vision for the students' future?", a: "Our vision is to build good people with virtue and discipline coupled with excellence. They should have life skills to care for themselves and their families, be good citizens, and be lifelong learners." },
+                    { q: "What is the characteristic of Kindergarten education here?", a: "Kindergarten buildings are designed for proximity to nature, utilizing natural light and ventilation. Life skills like putting on shoes, eating independently, and playing with others are integrated daily." },
+                    { q: "What life skill promotion activities are provided?", a: "We offer diverse activities: Music, Sports, Futsal, Coding, 3D Printing, Robotics, and English/Chinese language studies, supporting each child's preferences and potential." },
+                    { q: "Why should parents be confident in choosing Prasarnwittaya?", a: "Parents can trust our readiness to care for children of all ages, high academic quality, professional teachers, and over 45 years of experience in developing quality individuals for global society." }
+                ]
+            },
+            cn: {
+                "nav-title": "2024学年普拉萨维亚学校学生会委员会",
+                "nav-beyond": "超越课堂",
+                "go-back": "返回",
+                "badge": "超越课堂 45 周年纪念",
+                "hero-title": '学业优异、纪律严明、<span class="text-school-yellow">品德高尚</span><br>引领发展',
+                "hero-sub": '“这不仅仅是校内回响的口号，更是学校45年来在每一位学生心中埋下的根基。”',
+                "quote-main": '“学业优异、纪律严明、品德高尚、引领发展不仅是回荡在校园里的口号或哲学，更是学校45年来根植于每位学生心中的信条。”',
+                "author": "— 基蒂·齐奥萨库尔 (Kitti Chieosakul)",
+                "conclusion": '“从一粒小小的稻谷到在普拉萨维亚学校的学习与成长，这里不仅是传授知识的地方。这里将融合知识、美德和生活经验，让每个孩子都能自信地迈向未来，快乐成长，温暖如家，稳如树根，美如自然。”',
+                "vdo-title": "视频亮点",
+                "footer-title": "2024年普拉萨维亚学校学生会",
+                "address": "162/5 Moo 14, Sikhio Subdistrict, Sikhio District, Nakhon Ratchasima 30140",
+                "qa": [
+                    { q: "普拉萨维亚学校的特色和优势是什么？", a: "普拉萨维亚是一所注重学术学习与生活技能相结合的私立学校。我们提供游泳安全课程，强化编程、3D打印和机器人等科技技能，并强调英汉双语学习，使学生在当今多变的世界中保持领先。" },
+                    { q: "学校重点关注儿童哪些方面的发展？", a: "我们关注全面发展：身体、情感、社交和智力。自理能力、社交互动以及强化英汉沟通等生活技能已融入课程中。" },
+                    { q: "学校内部的气氛和环境如何？", a: "我们营造了一个温暖、稳定和安全的环境，让孩子们有宾至如归的感觉，从而促进他们的快乐和学习准备状态。环境设计旨在促进学习和活动的开展。" },
+                    { q: "教师在照顾学生方面扮演什么角色？", a: "我们的老师充当教练和导师，密切关注每个孩子，激发学习兴趣，以开放的心态倾听，并根据学生的个人兴趣和潜力提供支持，同时作为榜样。" },
+                    { q: "“生命力花园”项目是什么及其益处？", a: "生命力花园是一个学习空间，孩子们在这里从事有机耕作，如种水稻、养鱼和研究生态系统。它帮助孩子们理解可持续生活，并通过实践经验提升生活技能。", highlight: true },
+                    { q: "生命力花园项目如何促进儿童发展？", a: "它允许孩子们在实践中学习，观察从开始到结束的全过程，减少恐惧并增加信心。它还灌输了关于垃圾分类和可持续生活的价值观。", highlight: true },
+                    { q: "对学生未来的愿景是什么？", a: "我们的愿景是培养德才兼备、纪律严明的人才。他们应该具备照顾自己和家人的生活技能，成为好公民，并成为终身学习者。" },
+                    { q: "这里的幼儿园教育有什么特点？", a: "幼儿园建筑设计亲近自然，利用自然光和通风。穿鞋、独立进餐和与他人玩耍等生活技能每天都会融入其中。" },
+                    { q: "提供哪些提升生活技能的活动？", a: "我们提供多样化的活动：音乐、体育、五人制足球、编程、3D打印、机器人以及英汉语言学习，支持每个孩子的偏好和潜力。" },
+                    { q: "为什么家长应该放心选择普拉萨维亚？", a: "家长可以信任我们照顾各年龄段儿童的准备工作、高质量的教学、专业的教师以及超过45年为全球社会培养优秀人才的经验。" }
+                ]
+            }
+        };
+
+        function changeLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            // Update text content
+            const data = translations[lang];
+            for (let key in data) {
+                const el = document.querySelector(`[data-key="${key}"]`);
+                if (el) el.innerText = data[key];
+            }
+
+            // Hero title needs innerHTML for spans
+            document.getElementById('hero-title').innerHTML = data['hero-title'];
+
+            // Populate QA Cards
+            const container = document.getElementById('qa-container');
+            container.innerHTML = '';
+            
+            data.qa.forEach((item, index) => {
+                const isHighlight = item.highlight;
+                const card = document.createElement('div');
+                card.className = `qa-card p-8 rounded-3xl border ${isHighlight ? 'bg-blue-50 border-blue-100' : 'bg-slate-50 border-slate-100'}`;
+                
+                card.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <span class="${isHighlight ? 'bg-school-blue' : 'bg-school-blue'} text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3 shrink-0 text-sm">${index + 1}</span>
+                        <h4 class="font-bold text-blue-900 text-lg">${item.q}</h4>
+                    </div>
+                    <p class="${isHighlight ? 'text-slate-700' : 'text-slate-600'} leading-relaxed">${item.a}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize with Thai
+        window.onload = () => changeLang('th');
+    </script>
+
+</body>
+</html>
